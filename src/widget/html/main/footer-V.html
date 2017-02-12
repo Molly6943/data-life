@@ -1,0 +1,6 @@
+<div class="ui-mainFooter">
+    <div v-for="item in list" :class="{ 'is-active': active == $index }" class="ui-mainFooter__item" v-touch:tap="onItemTap($index)">
+        <div class="ui-mainFooter__icon is-{{item.tag}}"></div>
+        <div class="ui-mainFooter__title">{{item.title}}</div>
+    </div>
+</div>

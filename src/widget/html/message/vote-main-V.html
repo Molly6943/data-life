@@ -1,0 +1,129 @@
+<div class="ui-duel">
+    <div class="ui-duel__main">
+        <div class="ui-duel__user is-red">
+            <div class="ui-duel__user-avatar" style="background-image:url({{detail.fromAvatar|trans-photo}})"></div>
+            <div class="ui-duel__user-name">{{detail.fromName}}</div>
+            <div class="ui-duel__user-support" v-show="showVoteNum">支持数{{detail.supportFromNum}}票</div>
+            <!-- <div class="ui-duel__user-star"><i></i><i></i><i></i><i></i><i></i></div> -->
+            <svg width="40px" height="39px" viewBox="121 368 40 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+                <!-- <desc>Created with Sketch.</desc> -->
+                <defs></defs>
+                <path d="M126.908793,381.1351 C126.908793,377.818591 129.598102,375.130029 132.899222,375.130029 L151.987432,375.130029 C155.295855,375.130029 155.99895,376.944031 153.559416,379.18027 L131.327238,399.559767 C128.886998,401.796653 126.908793,400.930681 126.908793,397.604937 L126.908793,381.1351 Z" id="Rectangle-1545-Copy" stroke="none" fill-rule="evenodd" transform="translate(140.960804, 387.965594) rotate(-137.000000) translate(-140.960804, -387.965594) "></path>
+            </svg>
+        </div>
+        <div class="ui-duel__user is-blue">
+            <div class="ui-duel__user-avatar" style="background-image:url({{detail.toAvatar|trans-photo}})"></div>
+            <div class="ui-duel__user-name">{{detail.toName}}</div>
+            <div class="ui-duel__user-support" v-show="showVoteNum">支持数{{detail.supportToNum}}票</div>
+            <!-- <div class="ui-duel__user-star"><i></i><i></i><i></i><i></i><i></i></div><svg width="40px" height="39px" viewBox="121 368 40 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> -->
+            <svg width="40px" height="39px" viewBox="121 368 40 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+                <!-- <desc>Created with Sketch.</desc> -->
+                <defs></defs>
+                <path d="M126.908793,381.1351 C126.908793,377.818591 129.598102,375.130029 132.899222,375.130029 L151.987432,375.130029 C155.295855,375.130029 155.99895,376.944031 153.559416,379.18027 L131.327238,399.559767 C128.886998,401.796653 126.908793,400.930681 126.908793,397.604937 L126.908793,381.1351 Z" id="Rectangle-1545-Copy" stroke="none" fill-rule="evenodd" transform="translate(140.960804, 387.965594) rotate(-137.000000) translate(-140.960804, -387.965594) "></path>
+            </svg>
+        </div>
+        <div class="ui-duel__line"></div>
+        <div class="ui-duel__vs">
+            <div class="ui-duel__vs-title">VS</div>
+            <div class="ui-duel__vs-time">{{detail.startTime}} - {{detail.endTime}}</div>
+        </div>
+    </div>
+    <div class="ui-duel__aside">
+        <div class="ui-duel__progress"><i class="supportWidth" style="width: 10%"></i></div>
+        <div class="ui-duel__deadline">{{detail.endDay}}结束</div>
+    </div>
+</div>
+<div class="ui-detail">
+    <div class="ui-detail__wrap">
+        <div class="ui-detail__wrap-top">
+            <!-- <div class="ui-detail__activity">
+                <div class="ui-detail__activity-label">活动</div>
+                <div class="ui-detail__activity-time">{{detail.startTimeHour}} - {{detail.endTimeHour}}</div>
+                {{detail.target}}
+            </div> -->
+            <div class="ui-detail__activity-time">{{detail.startTimeHour}} - {{detail.endTimeHour}}</div>
+            <div class="ui-detail__line">
+                <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/publish-activity.png)">
+                </div>
+                <div class="ui-detail__title">
+                    活动
+                </div>
+                <div class="ui-detail__subTitle">
+                    {{detail.content}}
+                </div>
+            </div>
+            <div class="ui-detail__line">
+                <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/think.png)">
+                </div>
+                <div class="ui-detail__title">
+                    想法
+                </div>
+                <div class="ui-detail__subTitle">
+                    {{detail.thinks}}
+                </div>
+            </div>
+            <div class="ui-detail__line">
+                <div class="ui-detail__leftIcon" style="background-image:url(../../image/message/vote-location.png)">
+                </div>
+                <div class="ui-detail__title">
+                    地点
+                </div>
+                <div class="ui-detail__subTitle">
+                    {{detail.address}}
+                </div>
+            </div>
+            <div class="ui-detail__rewards">
+                <div class="ui-detail__rewards1" v-show="isGiveMoney">{{detail.XSMoney | trans-price}}</div>
+                <div class="ui-detail__rewards2" v-show="isGiveMoney">{{detail.DSMoney | trans-price}}</div>
+                <div class="ui-detail__rewards3" v-show="isGetMoney">{{detail.QSMoney | trans-price}}</div>
+                <div class="ui-detail__rewards4" v-show="isGetMoney">{{detail.DJMoney | trans-price}}</div>
+            </div>
+            <div class="ui-detail__date">活动发起日期 : {{detail.start}}</div>
+        </div>
+        <div class="ui-detail__wrap-bottom">
+            <div class="ui-detail__message is-blue">
+                <div class="ui-detail__message-vote">{{detail.supportToNum}}</div>
+                <div class="ui-detail__message-main">
+                    <div class="ui-detail__message-label">
+                        <svg width="376px" height="70px" viewBox="19 1174 376 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+                            <!-- <desc>Created with Sketch.</desc> -->
+                            <defs></defs>
+                            <g id="Group-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(19.000000, 1174.000000)">
+                                <polygon id="Rectangle-1566-Copy" points="0 0 311.605536 0 375 50.0371094 34.078167 50.0371094 0 69.4570312"></polygon>
+                            </g>
+                        </svg>
+                        <div class="ui-detail__message-nickname">{{detail.toName}}</div>
+                    </div>
+                    {{detail.toContent}}
+                </div>
+            </div>
+            <div class="ui-detail__message is-red">
+                <div class="ui-detail__message-vote">{{detail.supportFromNum}}</div>
+                <div class="ui-detail__message-main">
+                    <div class="ui-detail__message-label">
+                        <svg width="376px" height="70px" viewBox="19 1174 376 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+                            <!-- <desc>Created with Sketch.</desc> -->
+                            <defs></defs>
+                            <g id="Group-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(19.000000, 1174.000000)">
+                                <polygon id="Rectangle-1566-Copy" points="0 0 311.605536 0 375 50.0371094 34.078167 50.0371094 0 69.4570312"></polygon>
+                            </g>
+                        </svg>
+                        <div class="ui-detail__message-nickname">{{detail.fromName}}</div>
+                    </div>
+                    {{detail.fromContent}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui-support" v-show="showSupport">
+    <div class="ui-support__btn is-red" v-touch:tap="onSupportTap(1)">支持</div>
+    <div class="ui-support__btn is-blue" v-touch:tap="onSupportTap(2)">支持</div>
+</div>
+<div class="ui-response" v-show="showResponse">
+    <div class="ui-response__btn is-blue" v-touch:tap="onResponseTap">回应</div>
+</div>

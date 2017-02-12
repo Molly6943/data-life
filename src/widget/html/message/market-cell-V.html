@@ -1,0 +1,47 @@
+<div class="ui-index__item">
+    <div class="ui-index__avatar" style="background-image:url({{item.avatar}})"></div>
+    <div class="ui-index__main">
+        <div class="ui-index__aside">
+            <!-- <div class="ui-index__button">求赏</div> -->
+            <div class="ui-index__button is-attention" v-show="item.isAttention == 1">已关注</div>
+            <div class="is-attention" v-show="item.isAttention == 2">
+                关注
+            </div>
+        </div>
+        <div class="ui-index__nickname">{{item.nickname}}</div>
+        <div class="ui-index__hobby">{{item.hobby}}</div>
+        <div class="ui-index__status" v-show="item.showNow">
+            正在{{item.type}}
+        </div>
+        <div class="ui-index__statusReady" v-show="item.showReady">
+            准备{{item.type}}
+        </div>
+        <div class="ui-index__statusReady" v-show="item.showDone">
+            {{item.type}}
+        </div>
+        <div class="ui-index__stars">
+            <i class="ui-index__star" v-for="star in item.stars" style="background-image:url({{star.pic}})"></i>
+        </div>
+    </div>
+    <div class="ui-index__content">{{item.content}}</div>
+    <div class="ui-index__image" v-show="item.showImage">
+        <div class="ui-index__pic" style="background-image:url({{item.image}})">
+        </div>
+    </div>
+    <div class="ui-index__detail">
+        <div class="ui-index__detail-comment" v-touch:tap="onCommentTap">{{item.cmtNum}}</div>
+        <div class="ui-index__detail-like" v-touch:tap="onLikeTap">{{item.zanNum}}</div>
+        <div class="ui-index__detail-unlike" v-touch:tap="onUnlikeTap">{{item.caiNum}}</div>
+        <div class="ui-index__detail-time">{{item.timeText}}</div>
+    </div>
+    <div class="ui-index__like-list">
+        <div class="ui-index__like-item" v-for="like in item.likeList">{{like.likename}}&nbsp;</div>
+        <div class="ui-index__like-item">&nbsp;</div>
+        <!-- <i class="ui-index__share" v-if="!1"></i> -->
+    </div>
+    <div class="ui-index__comment">
+        <div class="ui-index__comment-item" v-for="comment in item.comList"><span>{{comment.name}}：</span>{{{comment.text}}}</div>
+        <!-- <div class="ui-index__comment-item">狼人：你片酬多少</div>
+        <div class="ui-index__comment-item">狼人：你片酬多少片酬多少片酬多少片酬多少</div> -->
+    </div>
+</div>

@@ -1,0 +1,27 @@
+@import "../_config";
+.business-main {
+    .tab-list {
+        li {
+            font-size: 0.30rem;
+            line-height: 0.96rem;
+            height: 0.96rem;
+            color: #3D3D3D;
+            border-bottom: 1px solid #E5E5E5;
+            display: flex;
+            background-color: #fff;
+            .mark {
+                flex: 1;
+                margin-left: 0.20rem;
+            }
+            .icon-arrow {
+                width: 0.40rem;
+                height: 100%;
+                margin: 0 0.20rem 0 0.14rem;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-image: url("../../image/privacy/icon-arrow.png");
+                background-size: 0.19rem;
+            }
+        }
+    }
+}

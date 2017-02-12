@@ -1,0 +1,127 @@
+<div class="ui-detail">
+    <div class="ui-detail__line">
+        <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/publish-target.png)">
+        </div>
+        <div class="ui-detail__title">
+            对象
+        </div>
+        <div class="ui-detail__subTitle">
+            {{target}}
+        </div>
+        <div class="ui-detail__rightText">
+            发起人：{{sponsor}}
+        </div>
+    </div>
+    <div class="ui-detail__line">
+        <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/publish-activity.png)">
+        </div>
+        <div class="ui-detail__title">
+            活动
+        </div>
+        <div class="ui-detail__subTitle">
+            {{content}}
+        </div>
+    </div>
+    <div class="ui-detail__line">
+        <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/think.png)">
+        </div>
+        <div class="ui-detail__title">
+            想法
+        </div>
+        <div class="ui-detail__subTitle">
+            {{thinks}}
+        </div>
+    </div>
+    <div class="ui-detail__line">
+        <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/publish-time.png)">
+        </div>
+        <div class="ui-detail__title">
+            时间
+        </div>
+        <div class="ui-detail__subTitle">
+            {{startTime}} 至 {{endTime}}
+        </div>
+    </div>
+    <!-- <div class="ui-detail__line">
+        <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/face.png)">
+        </div>
+        <div class="ui-detail__title">
+            心情
+        </div>
+        <div class="ui-detail__subTitle">
+            喜悦
+        </div>
+        <div class="ui-detail__rightIcon" style="background-image:url(../../image/privacy/task/back.png)">
+        </div>
+    </div> -->
+    <div class="ui-detail__line">
+        <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/publish-location.png)">
+        </div>
+        <div class="ui-detail__title">
+            定位
+        </div>
+        <div class="ui-detail__subTitle">
+            {{addr}}
+        </div>
+    </div>
+    <div class="ui-detail__rewards">
+        <div class="ui-detail__rewards1" v-show="isGiveMoney">
+            <div class="ui-detail__rewards-input">
+                <input readOnly type="tel"  v-model="XSMoney | trans-price"></input>
+            </div>
+        </div>
+        <div class="ui-detail__rewards2" v-show="isGiveMoney">
+            <div class="ui-detail__rewards-input">
+                <input readOnly type="tel"  v-model="DSMoney | trans-price"></input>
+            </div>
+        </div>
+        <div class="ui-detail__rewards3" v-show="isGetMoney">
+            <div class="ui-detail__rewards-input">
+                <input readOnly type="tel"  v-model="QSMoney | trans-price"></input>
+            </div>
+        </div>
+        <div class="ui-detail__rewards4" v-show="isGetMoney">
+            <div class="ui-detail__rewards-input">
+                <input readOnly type="tel"  v-model="DJMoney | trans-price"></input>
+            </div>
+        </div>
+    </div>
+    <div class="ui-detail__body-gallery" v-touch:tap="onPicTap">
+        <div class="ui-detail__body-images" style="width:{{ (1.625 + 0.2) * images.length }}rem">
+            <div class="ui-detail__body-image" style="background-image:url({{pic|trans-photo}})" v-for="pic in images"></div>
+        </div>
+    </div>
+    <div class="ui-detail__star">
+        <div class="ui-detail__leftStar" style="background-image:url(../../image/privacy/task/start.png)">
+        </div>
+        <div class="ui-detail__comment">
+            评价
+        </div>
+        <div class="ui-detail__showStar">
+            <i class="ui-detail__starItem" v-touch:tap="onStarTap($index)" v-for="item in stars" v-show="item.stars" style="background-image:url({{item.pic}})"></i>
+            <!-- <i class="ui-detail__starItem" v-for="item in showStars" v-show="item.showstars" style="background-image:url({{item.pic}})"></i> -->
+        </div>
+        <div class="ui-detail__rightBtn" v-touch:tap="onSubmitTap">
+            提交
+        </div>
+    </div>
+    <div class="ui-detail__complain" v-touch:tap="openComplain()">
+        <div class="ui-detail__leftBtn">
+            诉
+        </div>
+        <div class="ui-detail__leftText">
+            投诉
+        </div>
+        <div class="ui-detail__rightIcon" style="background-image:url(../../image/privacy/task/back.png)">
+        </div>
+    </div>
+    <div class="ui-detail__footer">
+        <div class="ui-detail__footerFiexd">
+            <div class="ui-detail__footerItem is-collect  " style="background-image:url({{collect}})"  v-touch:tap="onCollectTap"></div>
+            <div class="ui-detail__footerItem is-share " v-touch:tap="onShareTap"></div>
+            <div class="ui-detail__footerText is-text" v-touch:tap="onTextTap">
+                {{text}}
+            </div>
+        </div>
+    </div>
+</div>

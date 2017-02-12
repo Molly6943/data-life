@@ -1,0 +1,122 @@
+@import "../_config";
+
+.ui-list {
+    background: #ffffff;
+}
+.ui-list__item {
+    height: 1.4rem;
+    position: relative;
+    padding-left: 0.2rem;
+    color: #3D3D3D;
+    font-size: 0.3rem;
+    line-height: 1.4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    border-bottom: 1px #eee solid;
+    span {
+        margin-left: 1.4rem;
+        color: #22C25E;
+    }
+    &:active {
+        background-color: #c2c4c2;
+    }
+
+}
+.ui-list__avatar {
+    position: absolute;
+    width: 1.08rem;
+    height: 1.08rem;
+    border-radius: 8%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: left;
+    top:50%;
+    transform: translateY(-50%);
+}
+.ui-find {
+margin-top: 0.2rem;
+}
+.ui-find__friend,
+.ui-find__activity {
+    background: #fff;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+    color: #3D3D3D;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    position: relative;
+    padding: 0 0.2rem 0 0.9rem;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0.25rem;
+        width: 0.44rem;
+        height: 0.45rem;
+        @include bgi-full(url(../../image/search/find-friend.png));
+    }
+}
+.ui-find__activity {
+    margin-top: 0.12rem;
+    &::before {
+        width: 0.41rem;
+        height: 0.41rem;
+        @include bgi-full(url(../../image/search/find-activity.png));
+    }
+}
+.ui-button {
+    position: relative;
+    height: 4rem;
+}
+.ui-button__activity,
+.ui-button__information,
+.ui-button__friend {
+    position: absolute;
+    width: 1.13rem;
+    height: 1.08rem + 0.6rem;
+    padding-top: 1.08rem;
+    line-height: 0.6rem;
+    font-size: 0.3rem;
+    color: #3D3D3D;
+    text-align: center;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.13rem;
+        height: 1.08rem;
+    }
+}
+.ui-button__activity {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    &::before {
+        @include bgi-full(url(../../image/search/icon-activity.png));
+    }
+}
+.ui-button__information {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    &::before {
+        @include bgi-full(url(../../image/search/icon-information.png));
+    }
+}
+.ui-button__friend {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    &::before {
+        @include bgi-full(url(../../image/search/icon-friend.png));
+    }
+}

@@ -1,0 +1,274 @@
+html,body{
+	margin:0 auto;
+	padding:0 auto;
+}
+@import "../_config";
+body {
+    overflow: hidden;
+}
+
+.ui-header {
+    display: block;
+    // position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    font-size: 0.34rem;
+    color: #fff;
+    background-color: #38373C;
+    box-sizing: content-box;
+    z-index: 999;
+    &:after {
+        content: '';
+        display: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #c2c2c7;
+        transform: scale(1, 0.5);
+        transform-origin: center center;
+    }
+}
+
+.ui-header__leftBtn,
+.ui-header__rightBtn {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0.88rem;
+    height: 0.88rem;
+    text-align: center;
+    z-index: 9;
+    &>i {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.ui-header__rightBtn {
+    text-align: right;
+}
+
+.ui-header__mainLeftBtn,
+.ui-header__mainRightBtn,
+.ui-header__sharingRightBtn {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 1.22rem;
+    height: 0.88rem;
+    text-align: center;
+    z-index: 9;
+    &>i {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.ui-header__mainLeftBtn {
+    &>i {
+        width: 0.34rem;
+        height: 0.44rem;
+        @include bgi-full( url(../../image/main/position.png));
+    }
+}
+.ui-header__mainRightBtn {
+    right: 0.3rem;
+    // &>.ui-header__mainChangeStyle {
+    //     display: inline-block;
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 0;
+    //     width: 0.4rem;
+    //     height: 0.4rem;
+    //     margin-top: -0.2rem;
+    //     @include bgi-full( url(../../image/main/change.png));
+    // }
+    &>.ui-header__mainAdd{
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 0rem;
+        width: 0.44rem;
+        height: 0.44rem;
+        margin-top: -0.2rem;
+        @include bgi-full( url(../../image/main/add.png));
+    }
+}
+.ui-header__sharingRightBtn{
+    right:0;
+}
+.ui-header__searchCancel{
+    text-align:center;
+}
+.ui-header__class{
+    display:block;
+    position:absolute;
+    top:50%;
+    right:50%;
+    margin-top: -0.162rem;
+    margin-right: -0.162rem;
+    width: 0.325rem;
+    height: 0.325rem;
+    @include bgi-full( url(../../image/sharing/main-sharingClass.png));
+}
+.ui-header__title {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.88rem;
+    padding: 0 0.88rem;
+    box-sizing: border-box;
+    @include ellipsis;
+    text-align: center;
+}
+
+.ui-header__search {
+    display: block;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    width: 94%;
+    height: 0.88rem;
+    padding: 0 1.22rem;
+    box-sizing: border-box;
+    @include ellipsis;
+    text-align: center;
+    &>div {
+        display: block;
+        position: relative;
+        top: 50%;
+        // left: 0.2rem;
+        height: 0.55rem;
+        // padding-left: 30px;
+        margin-top: -0.27rem;
+        font-size: 16px;
+        padding-left: 0.46rem;
+        line-height: 0.55rem;
+        color: #fff;
+        border-radius: 0.27rem;
+        border: 1px solid #fff;
+        outline: none;
+        background-color: transparent;
+    }
+    &>input{
+        display: block;
+        position: relative;
+        top: 50%;
+        // left: 0.2rem;
+        height: 0.55rem;
+        padding-left: 30px;
+        margin-top: -0.27rem;
+        font-size: 14px;
+        line-height: 0.55rem;
+        color: #fff;
+        border-radius: 0.27rem;
+        border: 1px solid #fff;
+        outline: none;
+        background-color: transparent;
+    }
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 1.4rem;
+        width: 0.34rem;
+        height: 0.34rem;
+        margin-top: -0.17rem;
+        @include bgi-full( url(../../image/main/search.png));
+    }
+}
+
+.ui-mainFooter {
+    display: flex;
+    flex-flow: row;
+    -webkit-box-orient: horizontal;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+}
+
+.ui-mainFooter__item {
+    display: block;
+    flex: 1;
+    height: 100%;
+    padding-top: 8px;
+    text-align: center;
+    font-size: 0;
+    &.is-active {
+        .ui-mainFooter__icon {
+            &.is-message {
+                background-size: 22px 22px;
+                @include bgi-center( url(../../image/main/message-select.png));
+            }
+            &.is-function {
+                background-size: 22px 22px;
+                @include bgi-center( url(../../image/main/function-select.png));
+            }
+            &.is-sharing {
+                background-size: 22px 22px;
+                @include bgi-center( url(../../image/main/sharing-select.png));
+            }
+            &.is-privacy {
+                background-size: 22px 22px;
+                @include bgi-center( url(../../image/main/privacy-select.png));
+            }
+        }
+        .ui-mainFooter__title {
+            color: #00B30F;
+        }
+    }
+}
+
+.ui-mainFooter__icon {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    // height: 100%;
+    &.is-message {
+        background-size: 22px 22px;
+        @include bgi-center( url(../../image/main/message.png));
+    }
+    &.is-function {
+        background-size: 22px 22px;
+        @include bgi-center( url(../../image/main/function.png));
+    }
+    &.is-sharing {
+        background-size: 22px 22px;
+        @include bgi-center( url(../../image/main/sharing.png));
+    }
+    &.is-privacy {
+        background-size: 22px 22px;
+        @include bgi-center( url(../../image/main/privacy.png));
+    }
+}
+
+.ui-mainFooter__title {
+    margin-top: 5px;
+    font-size: 10px;
+    color: #646464;
+    text-align: center;
+}
+
+.ui-mainHeader {
+    display: block;
+    box-sizing: content-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: $mainColor;
+    // height: 44px;
+    // padding-top: 20px;
+}

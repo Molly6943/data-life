@@ -1,0 +1,42 @@
+<div class="ui-list__header">
+	<span>温馨提示：申请提现的姓名必须和实名认证的姓名一致，且拍摄身份证照片清晰可见。 一经认证将无法修改。</span>
+</div>
+<div class="ui-list__selfInfor">
+	<div class="ui-list__content">
+		<li>姓名</li>
+		<input id="name" v-model="name" class="ui-list__inputText" type="text" placeholder="请填写真实姓名"></input>
+	</div>
+
+	<div class="ui-list__content">
+		<li>身份证</li>
+		<input id="identity" v-model="identity" class="ui-list__inputText" type="text" placeholder="请填写真实身份证号码"></input>
+	</div>
+</div>
+
+<span class="ui-list__addPicHeader">请按指定要求上传证件照片：</span>
+<input type="hidden" v-model="photo_1">
+<input type="hidden" v-model="photo_2">
+<input type="hidden" v-model="photo_3">
+<div class="ui-list__addPic">
+
+	<div class="ui-list__addPicItem" v-touch:tap="onPhotoTap(1)">
+		<span class="ui-list__addPicRectangle"></span>
+		<span class="ui-list__addPicText">手持身份证照</span>
+		<i style="background-image:url({{photo_1 | trans-photo}})"></i>
+	</div>
+
+	<div class="ui-list__addPicItem" v-touch:tap="onPhotoTap(2)">
+		<span class="ui-list__addPicRectangle"></span>
+		<span class="ui-list__addPicText">身份证正面</span>
+		<i style="background-image:url({{photo_2 | trans-photo}})"></i>
+	</div>
+
+	<div class="ui-list__addPicItem" v-touch:tap="onPhotoTap(3)">
+		<span class="ui-list__addPicRectangle"></span>
+		<span class="ui-list__addPicText">身份证背面</span>
+		<i style="background-image:url({{photo_3 | trans-photo}})"></i>
+	</div>
+
+</div>
+
+<div class="ui-list__buttom" v-touch:tap="onPostTap">提交审核</div>

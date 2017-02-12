@@ -1,0 +1,74 @@
+<div class="ui-othersPage">
+    <div class="header">
+    	<div class="header-pic" style="background-image:url({{avatar | trans-photo}})">
+    		<span class="sex" v-bind:class="{'icon-man': sex=='1','icon-woman':sex=='2'}"></span>
+    	</div>
+    	<div class="header-messages">
+    		<p class="nickname">{{nickName}}</p>
+    		<p class="account">账号:{{account}}</p>
+    	</div>
+    </div>
+    <div class="ui-othersPage__line">
+        <div class="ui-othersPage__age">
+            <div class="isSex" v-bind:class="{'is-man': sex=='1','is-woman':sex=='2'}"></div>
+            <p>
+                {{age}}
+            </p>
+        </div>
+        <div class="ui-othersPage__XZ">
+            {{xingZuo}}座
+        </div>
+        <div class="ui-othersPage__distence">
+            {{distance}}
+        </div>
+        <div class="dot">
+        </div>
+        <div class="ui-othersPage__time">
+            {{timeText}}
+        </div>
+    </div>
+    <div class="ui-othersPage__circle" v-touch:tap="onOthersMomentTap">
+        <p>
+            动态
+        </p>
+        <div class="ui-othersPage__gallery">
+            <div class="ui-othersPage__item" v-for="item in images" style="background-image:url({{item | trans-photo}})">
+            </div>
+        </div>
+        <div class="ui-othersPage__rightBtn">
+        </div>
+    </div>
+    <div class="ui-othersPage__info">
+        <p>
+            个人信息
+        </p>
+        <div>
+            所在地：{{province}}{{city}}
+        </div>
+    </div>
+    <div class="ui-othersPage__credit">
+        <p>
+            信用度
+        </p>
+        <div class="ui-othersPage__star">
+            <div class="ui-othersPage__starItem" v-for="item in stars" style="background-image:url({{item.pic}})"></div>
+        </div>
+    </div>
+    <div class="ui-othersPage__bottom">
+        <div class="ui-othersPage__fixed">
+            <div class="ui-othersPage__chat" v-touch:tap="onChatTap">
+                <div class="chat">
+                </div>
+                <p >
+                    对话
+                </p>
+            </div>
+            <div class="ui-othersPage__attention" v-touch:tap="onAttentionTap">
+                <div class="attention"></div>
+                <p>
+                    关注
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

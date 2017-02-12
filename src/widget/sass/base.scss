@@ -1,0 +1,145 @@
+// 导入公共scss模块
+@import "base/base";
+@import "config";
+html,
+body {
+    height: 100%;
+    line-height: 1;
+    font-size: $rootFontSize;
+    color: $mainFontColor;
+    background-color: #eee;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#header {
+    box-sizing: content-box;
+}
+
+.ui-header {
+    display: block;
+    position: relative;
+    // left: 0;
+    // top: 0;
+    width: 100%;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    font-size: 0.34rem;
+    color: #333;
+    background-color: $mainColor;
+    box-sizing: content-box;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #c2c2c7;
+        transform: scale(1, 0.5);
+        transform-origin: center center;
+    }
+}
+
+.ui-header__leftBtn,
+.ui-header__rightBtn,
+.ui-header__actionSheetRightBtn {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0.88rem;
+    // width: 1.22rem;
+    height: 0.88rem;
+    // text-align: center;
+    z-index: 9;
+}
+
+.ui-header__leftBtn {
+    left: 0.4rem;
+    font-size: 0;
+    &>i {
+        display: inline-block;
+        vertical-align: middle;
+        &.is-arrow {
+            width: 0.24rem;
+            height: 0.42rem;
+            @include bgi-full( url(../image/account/leftBtn-icon-arrow.png));
+        }
+    }
+}
+
+.ui-header__rightBtn {
+    width: 0.66rem;
+    height: 0.46rem;
+    &:active{
+         opacity:0.4;
+    }
+}
+
+.ui-header__search {
+    display: block;
+    position: absolute;
+    // left: 10px;
+    bottom: 0;
+    width: 84%;
+    height: 0.88rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    @include ellipsis;
+    text-align: center;
+    &>form{
+        background-color: transparent;
+        &>input{
+            display: block;
+            position: relative;
+            // top: 50%;
+            // left: 0.2rem;
+            height: 0.55rem;
+            padding-left: 30px;
+            // margin-top: -0.27rem;
+            margin-top: 0.17rem;
+            font-size: 16px;
+            line-height: 1;
+            color: #fff;
+            border-radius: 0.27rem;
+            border: 1px solid #fff;
+            outline: none;
+            background-color: transparent;
+        }
+    }
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 1.22rem;
+        width: 0.34rem;
+        height: 0.34rem;
+        margin-top: -0.18rem;
+        @include bgi-full( url(../../image/main/search.png));
+    }
+}
+
+.ui-header__barMenu {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0.3rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-top: -0.2rem;
+    @include bgi-full( url(../../image/main/add.png));
+}
+
+.ui-header__title {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.88rem;
+    padding: 0 0.88rem;
+    box-sizing: border-box;
+    @include ellipsis;
+    text-align: center;
+}

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+.history-main {
+  min-height: 100%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .history-main .tab-list {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+       -moz-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+    .history-main .tab-list li {
+      font-size: .30rem;
+      line-height: .96rem;
+      height: .96rem;
+      color: #3D3D3D;
+      border-bottom: 1px solid #E5E5E5;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      background-color: #fff; }
+      .history-main .tab-list li .mark {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+           -moz-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        margin-left: .20rem; }
+      .history-main .tab-list li .icon-arrow {
+        width: .40rem;
+        height: 100%;
+        margin: 0 .20rem 0 .14rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url(../../image/privacy/icon-arrow.png);
+        -webkit-background-size: .19rem .19rem;
+           -moz-background-size: .19rem;
+             -o-background-size: .19rem;
+                background-size: .19rem; }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhpc3RvcnkuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGtCQUFpQjtBQUNqQjs7SUFFRztBQUNIOztJQUVHO0FBQ0gsMEJBQXlCO0FBQ3pCOzs7SUFHRztBQUNILG1CQUFrQjtBQUNsQixrQkFBaUI7QUFDakI7Ozs7O0lBS0c7QUFDSCxVQUFTO0FBQ1QsVUFBUztBQUNULGFBQVk7QUFDWixZQUFXO0FBQ1gsWUFBVztBQUNYLFdBQVU7QUFDVixZQUFXO0FBQ1gsV0FBVTtBQUNWLFdBQVU7QUFDVixXQUFVO0FBQ1YsU0FBUTtBQUNSLFdBQVU7QUFDVixXQUFVO0FBQ1YsV0FBVTtBQUNWLFlBQVc7QUFDWDtFQUNFLGtCQUFpQjtFQUNqQix3QkFBdUI7RUFDdkIsc0JBQWM7RUFBZCx1QkFBYztFQUFkLG1CQUFjO0VBQWQsc0JBQWM7RUFBZCxlQUFjO0VBQ2QsOEJBQXVCO0VBQXZCLCtCQUF1QjtFQUF2QixnQ0FBdUI7S0FBdkIsMkJBQXVCO0tBQXZCLDRCQUF1QjtNQUF2Qiw0QkFBdUI7VUFBdkIsd0JBQXVCLEVBQUU7RUFDekI7SUFDRSxxQkFBUTtJQUFSLGlCQUFRO09BQVIsa0JBQVE7UUFBUixhQUFRO1lBQVIsU0FBUSxFQUFFO0lBQ1Y7TUFDRSxtQkFBa0I7TUFDbEIscUJBQW9CO01BQ3BCLGdCQUFlO01BQ2YsZ0JBQWU7TUFDZixrQ0FBaUM7TUFDakMsc0JBQWM7TUFBZCx1QkFBYztNQUFkLG1CQUFjO01BQWQsc0JBQWM7TUFBZCxlQUFjO01BQ2Qsd0JBQXVCLEVBQUU7TUFDekI7UUFDRSxxQkFBUTtRQUFSLGlCQUFRO1dBQVIsa0JBQVE7WUFBUixhQUFRO2dCQUFSLFNBQVE7UUFDUixxQkFBb0IsRUFBRTtNQUN4QjtRQUNFLGVBQWM7UUFDZCxjQUFhO1FBQ2IsMkJBQTBCO1FBQzFCLDhCQUE2QjtRQUM3QixvQ0FBbUM7UUFDbkMsMkRBQTBEO1FBQzFELHdDQUF3QjtXQUF4Qiw4QkFBd0I7YUFBeEIsNEJBQXdCO2dCQUF4Qix5QkFBd0IsRUFBRSIsImZpbGUiOiJwcml2YWN5L2hpc3RvcnkuY3NzIiwic291cmNlUm9vdCI6Ii4uL3Nhc3MvIn0= */

@@ -1,0 +1,446 @@
+@import "../_config"; // triangle
+%triangle-basic {
+    content: "";
+    height: 0;
+    width: 0;
+}
+@mixin triangle($direction, $borderColor, $size...) {
+     @extend %triangle-basic;
+    @if $direction == top {
+        border-width: $size;
+        border-style: dashed dashed solid;
+        border-color: transparent transparent $borderColor;
+    }
+    @else if $direction == right {
+        border-width: $size;
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent $borderColor;
+    }
+    @else if $direction == bottom {
+        border-width: $size;
+        border-style: solid dashed dashed;
+        border-color: $borderColor transparent transparent;
+    }
+    @else if $direction == left {
+        border-width: $size;
+        border-style: dashed solid dashed dashed;
+        border-color: transparent $borderColor transparent transparent;
+    }
+    @else if $direction == topLeft {
+        border-width: $size;
+        border-style: solid dashed dashed solid;
+        border-color: $borderColor transparent transparent $borderColor;
+    }
+    @else if $direction == topRight {
+        border-width: $size;
+        border-style: solid solid dashed dashed;
+        border-color: $borderColor $borderColor transparent transparent;
+    }
+    @else if $direction == bottomLeft {
+        border-width: $size;
+        border-style: dashed dashed solid solid;
+        border-color: transparent transparent $borderColor $borderColor;
+    }
+    @else if $direction == bottomRight {
+        border-width: $size;
+        border-style: dashed solid solid dashed;
+        border-color: transparent $borderColor $borderColor transparent;
+    }
+}
+body,
+html {
+    height: 100%;
+    padding-top: 0;
+    @include bgi-cover( url(../../image/account/bg.png) );
+}
+.ui-header {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    font-size: 0.34rem;
+    color: #fff;
+    box-sizing: content-box;
+    z-index: 999;
+    background-color: transparent;
+    &:after {
+        display: none;
+    }
+}
+.ui-header__leftBtn {
+    font-size: 0;
+    & > i {
+        display: inline-block;
+        vertical-align: middle;
+        &.is-arrow {
+            // margin-left: 0.1rem;
+            width: 0.24rem;
+            height: 0.42rem;
+            @include bgi-full( url(../../image/common/icon-arrow-back.png) );
+        }
+    }
+}
+.container {
+    font-size: 0;
+    height: 100%;
+    padding-top: 0.88rem;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.logo-group {
+    padding-top: 1rem;
+    .icon-logo {
+        width: 1.58rem;
+        height: 1.56rem;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        @include bgi-center( url(../../image/account/logo.png) );
+        background-size: 100%;
+    }
+    .logo-name {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 0.04rem 0.04rem rgba(0,0,0, 0.5);
+        .mark {
+            font-size: 0.36rem;
+            line-height: 0.43rem;
+            margin-bottom: 0.10rem;
+        }
+        .submark {
+            font-size: 0.24rem;
+            line-height: 0.28rem;
+        }
+    }
+    .logo-desc {
+        font-size: 0.28rem;
+        line-height: 0.40rem;
+        color: #fff;
+        text-align: center;
+    }
+}
+.operate-group {
+    margin-top: 1rem;
+    width: 5.22rem;
+    margin: 0 auto;
+    .btn-login,
+    .btn-next,
+    .btn-signup {
+        display: block;
+        width: 100%;
+        height: 0.80rem;
+        line-height: 0.80rem;
+        margin-bottom: 0.64rem;
+        text-align: center;
+        font-size: 0.28rem;
+        color: #fff;
+        box-shadow: 0 0.05rem 0.04rem rgba(88,88,88, 0.5);
+        border-radius: 5px;
+    }
+    .btn-login,
+    .btn-next {
+        margin-top: 1rem;
+        background-color: #B1E04A;
+    }
+    .btn-signup {
+        border: 1px #FFF solid;
+    }
+    // .btn-signup {
+    //     border: 1px solid #fff;
+    //     margin-bottom: 1.36rem;
+    // }
+    .btn-forgetpwd {
+        font-size: 0.24rem;
+        line-height: 0.36rem;
+        color: #fff;
+        float: right;
+        margin-top: -.46rem;
+        margin-bottom: 0.40rem;
+    }
+    .third-party-title {
+        clear: both;
+        font-size: 0.24rem;
+        line-height: 0.36rem;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        margin-bottom: 0.80rem;
+        overflow: hidden;
+        &::before {
+            content: "";
+            width: 50%;
+            border-top: 1px solid #fff;
+            position: absolute;
+            left: -35%;
+            top: 50%;
+        }
+        &::after {
+            content: "";
+            width: 50%;
+            border-top: 1px solid #fff;
+            position: absolute;
+            left: 85%;
+            top: 50%;
+        }
+    }
+    .third-party-main {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0.3rem;
+        a {
+            display: block;
+            width: 0.60rem;
+            height: 0.60rem;
+            text-indent: -1000px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            cursor: pointer;
+        }
+        .btn-weixin {
+            background-image: url("../../image/account/icon-weixin.png");
+            background-size: 0.54rem;
+        }
+        .btn-qq {
+            background-image: url("../../image/account/icon-qq.png");
+            background-size: 0.61rem;
+        }
+        .btn-weibo {
+            background-image: url("../../image/account/icon-weibo.png");
+            background-size: 0.60rem;
+        }
+    }
+}
+.input {
+    font-size: 0.26rem;
+    line-height: 0.80rem;
+    height: 0.80rem;
+    border-bottom: 1px solid #fff;
+    padding-left: 1.00rem;
+    background-repeat: no-repeat;
+    background-position: left center;
+    position: relative;
+    input {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        line-height: 100%;
+    }
+    .btn-delete {
+        width: 0.38rem;
+        height: 0.38rem;
+        position: absolute;
+        top: 50%;
+        right: -.50rem;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-image: url("../../image/account/icon-delete.png");
+        background-size: 0.38rem;
+    }
+}
+.input-account {
+    margin-bottom: 0.30rem;
+    background-image: url("../../image/account/icon-accout.png");
+    background-size: 0.34rem;
+}
+.input-password {
+    margin-bottom: 0.85rem;
+    background-image: url("../../image/account/icon-password.png");
+    background-size: 0.30rem;
+}
+.use-tips {
+    font-size: 0.22rem;
+    line-height: 0.30rem;
+    color: #B5B5B5;
+    text-align: center;
+    margin-top: 2.22rem;
+    .btn-tips {
+        color: #fff;
+    }
+}
+.information {
+    min-height: 100%;
+    padding: 0 0.20rem;
+    background-color: #515151;
+    overflow: hidden;
+    .avatar {
+        width: 2.42rem;
+        height: 2.42rem;
+        margin: 0.60rem auto;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("../../image/account/icon-avatar.png");
+        background-size: 100%;
+        border-radius: 100px;
+    }
+    .input-group {
+        padding: 0.20rem;
+        background-color: #98C13E;
+        border-radius: 4px;
+        margin-bottom: 0.20rem;
+        display: flex;
+        input[type="text"] {
+            font-size: 0.30rem;
+            line-height: 0.40rem;
+            color: #FFFFFF;
+            text-align: center;
+            vertical-align: top;
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            flex: 1;
+            display: block;
+            &::-webkit-input-placeholder {
+                color: #fff !important;
+            }
+        }
+        textarea {
+            font-size: 0.30rem;
+            line-height: 0.40rem;
+            color: #FFFFFF;
+            text-align: center;
+            vertical-align: top;
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            display: block;
+            &::-webkit-input-placeholder {
+                color: #fff !important;
+            }
+        }
+        .sex {
+            width: 0.47rem;
+            height: 0.47rem;
+            margin: 0 0.20rem;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            position: relative;
+            font-size: 0;
+            border-radius: 100%;
+            border:none;
+            // input {
+            //     width: 100%;
+            //     height: 100%;
+            // vertical-align: top;
+            // }
+            // .tips {
+            //     width: 0.50rem;
+            //     height: 0.50rem;
+            //     font-size: 0.30rem;
+            //     color: #fff;
+            //     line-height: 0.50rem;
+            //     text-align: center;
+            //     border-radius: 4px;
+            //     background-color: #98C13E;
+            //     position: absolute;
+            //     top: -.85rem;
+            //     left: 50%;
+            //     transform: translateX(-50%);
+            //     display: none;
+            //     &::after {
+            //         @include triangle(bottom,#98C13E,.10rem);
+            //         position: absolute;
+            //         left: 50%;
+            //         bottom: -.18rem;
+            //         transform: translateX(-50%);
+            //     }
+            // }
+        }
+        .s-man {
+            background-image: url("../../image/account/icon-man.png");
+            .man {
+                display: block;
+            }
+        }
+        .s-woman {
+            background-image: url("../../image/account/icon-woman.png");
+            .woman {
+                display: block;
+            }
+        }
+        select {
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+        }
+        option {
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+        }
+    }
+}
+.find-pwd {
+    min-height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    .input-group {
+        display: flex;
+        height: 0.78rem;
+        margin: 0.30rem 0.85rem;
+        border: 1px solid #9E9E9E;
+        border-radius: 4px;
+        input {
+            width: 100%;
+            height: 100%;
+            line-height: 100%;
+            font-size: 0.30rem;
+            padding: 0 0.20rem;
+            flex: 1;
+            border: none;
+            display: block;
+            border-radius: 4px;
+        }
+        .btn-validate {
+            width: 1.00rem;
+            font-size: 0.28rem;
+            color: #fff;
+            line-height: 0.80rem;
+            text-align: center;
+            background-color: #B1E04A;
+            margin: -1px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+    }
+    .btn-next {
+        font-size: 0.28rem;
+        color: #fff;
+        line-height: 0.80rem;
+        text-align: center;
+        background-color: #B1E04A;
+        border-radius: 4px;
+        margin: 0.60rem 0.85rem;
+    }
+}
+#ios4.ios4 {
+    .logo-group {
+        padding-top: 0.5rem;
+    }
+    .input-password {
+        margin-bottom: 0.2rem;
+    }
+    .btn-login {
+        margin-top: 0.6rem;
+    }
+    .btn-next {
+        margin-top: 0.6rem;
+    }
+    .third-party-title {
+        margin-bottom: 0.2rem;
+    }
+    .use-tips {
+        margin-top: 1.3rem;
+    }
+}

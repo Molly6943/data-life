@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+body {
+  min-height: 100%;
+  height: auto;
+  line-height: 1.2;
+  background-repeat: repeat-y;
+  background-position: center center;
+  -webkit-background-size: 100% auto;
+     -moz-background-size: 100% auto;
+       -o-background-size: 100% auto;
+          background-size: 100% auto;
+  color: #323232; }
+
+.ui-list__itemBlock {
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+  background-color: #ffffff; }
+
+.ui-list__item {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 67px;
+  border-bottom: 1px solid #9f9f9f;
+  padding-top: 15px; }
+  .ui-list__item > b {
+    display: block;
+    position: absolute;
+    top: 44px;
+    font-size: 12px;
+    color: #5a5a5a; }
+
+.ui-list__itemName {
+  display: inline;
+  float: left;
+  font-size: 14px;
+  color: #323232;
+  padding-top: 1px; }
+
+.ui-lst__itemConfirm {
+  display: inline;
+  position: block;
+  float: left;
+  width: 44px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 10px;
+  color: #ffffff;
+  text-align: center;
+  margin-left: 10px;
+  background-color: #98C13E;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px; }
+
+.ui-list__itemTime {
+  display: block;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px;
+  color: #b4b4b4; }
+
+.ui-list__buttom {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 16px;
+  margin-top: 20px;
+  background-color: #98C13E;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px; }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbmZpcm1TdWNjZXNzLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxrQkFBaUI7QUFDakI7O0lBRUc7QUFDSDs7SUFFRztBQUNILDBCQUF5QjtBQUN6Qjs7O0lBR0c7QUFDSCxtQkFBa0I7QUFDbEIsa0JBQWlCO0FBQ2pCOzs7OztJQUtHO0FBQ0gsVUFBUztBQUNULFVBQVM7QUFDVCxhQUFZO0FBQ1osWUFBVztBQUNYLFlBQVc7QUFDWCxXQUFVO0FBQ1YsWUFBVztBQUNYLFdBQVU7QUFDVixXQUFVO0FBQ1YsV0FBVTtBQUNWLFNBQVE7QUFDUixXQUFVO0FBQ1YsV0FBVTtBQUNWLFdBQVU7QUFDVixZQUFXO0FBQ1g7RUFDRSxrQkFBaUI7RUFDakIsY0FBYTtFQUNiLGtCQUFpQjtFQUNqQiw2QkFBNEI7RUFDNUIsb0NBQW1DO0VBQ25DLG9DQUEyQjtLQUEzQixpQ0FBMkI7T0FBM0IsK0JBQTJCO1VBQTNCLDRCQUEyQjtFQUMzQixnQkFBZSxFQUFFOztBQUVuQjtFQUNFLGdCQUFlO0VBQ2YsYUFBWTtFQUNaLGlCQUFnQjtFQUNoQiwyQkFBMEIsRUFBRTs7QUFFOUI7RUFDRSxnQkFBZTtFQUNmLG9CQUFtQjtFQUNuQixhQUFZO0VBQ1osY0FBYTtFQUNiLGtDQUFpQztFQUNqQyxtQkFBa0IsRUFBRTtFQUNwQjtJQUNFLGdCQUFlO0lBQ2Ysb0JBQW1CO0lBQ25CLFdBQVU7SUFDVixpQkFBZ0I7SUFDaEIsZ0JBQWUsRUFBRTs7QUFFckI7RUFDRSxpQkFBZ0I7RUFDaEIsYUFBWTtFQUNaLGlCQUFnQjtFQUNoQixnQkFBZTtFQUNmLGtCQUFpQixFQUFFOztBQUVyQjtFQUNFLGlCQUFnQjtFQUNoQixpQkFBZ0I7RUFDaEIsYUFBWTtFQUNaLGFBQVk7RUFDWixjQUFhO0VBQ2IsbUJBQWtCO0VBQ2xCLGlCQUFnQjtFQUNoQixnQkFBZTtFQUNmLG9CQUFtQjtFQUNuQixtQkFBa0I7RUFDbEIsMkJBQTBCO0VBQzFCLDRCQUFtQjtLQUFuQix5QkFBbUI7VUFBbkIsb0JBQW1CLEVBQUU7O0FBRXZCO0VBQ0UsZ0JBQWU7RUFDZixhQUFZO0VBQ1osY0FBYTtFQUNiLG1CQUFrQjtFQUNsQixpQkFBZ0I7RUFDaEIsZ0JBQWUsRUFBRTs7QUFFbkI7RUFDRSxnQkFBZTtFQUNmLGNBQWE7RUFDYixtQkFBa0I7RUFDbEIsZ0JBQWU7RUFDZixpQkFBZ0I7RUFDaEIsZ0JBQWU7RUFDZixvQkFBbUI7RUFDbkIsaUJBQWdCO0VBQ2hCLGtCQUFpQjtFQUNqQiwyQkFBMEI7RUFDMUIsNEJBQW1CO0tBQW5CLHlCQUFtQjtVQUFuQixvQkFBbUIsRUFBRSIsImZpbGUiOiJ2ZXJpZmljYXRpb24vY29uZmlybVN1Y2Nlc3MuY3NzIiwic291cmNlUm9vdCI6Ii4uL3Nhc3MvIn0= */

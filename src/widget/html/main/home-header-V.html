@@ -1,0 +1,14 @@
+<div id="header" class="ui-header is-base">
+    <div class="ui-header__mainLeftBtn"><i class="is-arrow"></i>广州</div>
+    <!-- <div v-touch:tap="onTitleTap" class="ui-header__title">{{title}}</div> -->
+    <div class="ui-header__search" v-touch:tap="onSearchTap">
+		<!-- <input type="text" placeholder="搜索ID、附近活动或人" value=""@keyup.enter="onEnter" /> -->
+        <div>ID、附近活动或人</div>
+    </div>
+    <div class="ui-header__mainRightBtn">
+    	<div class="ui-header__mainChangeStyle" v-touch:tap="onChangeListTap">
+    	</div>
+    	<div class="ui-header__mainAdd" v-touch:tap="onMenuTap">
+    	</div>
+    </div>
+</div>

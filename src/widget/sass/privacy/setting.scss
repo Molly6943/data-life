@@ -1,0 +1,72 @@
+@import "../_config";
+
+.setting-main,.setting-common-main{
+	min-height: 100%;
+	background-color: #fff;
+	display: flex;
+	flex-direction:column;
+	.tab-list{
+		flex:1;
+		li{
+			font-size: .30rem;
+			line-height: .96rem;
+			height: .96rem;
+			color:#3D3D3D;
+			border-bottom: 1px solid #E5E5E5;
+			display: flex;
+			background-color: #fff;
+            &:active {
+                background-color: #c2c4c2;
+            }
+			.mark{
+				flex:1;
+				margin-left: .20rem;
+			}
+			.icon-arrow{
+				width:.40rem;
+				height: 100%;
+				margin: 0 .20rem 0 .14rem;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-image: url(../../image/privacy/icon-arrow.png);
+				background-size: .19rem;
+			}
+		}
+	}
+	.btn-signout{
+		margin:.20rem .20rem 2.00rem;
+		color:#fff;
+		font-size: .32rem;
+		line-height: .80rem;
+		height: .80rem;
+		text-align: center;
+		background-color: #98C13E;
+		border-radius: 4px;
+	}
+}
+.setting-feedback-main{
+	.feedback-content{
+		margin:.20rem .20rem .40rem;
+		background-color: #fff;
+		border-radius: 4px;
+		overflow: hidden;
+		textarea{
+			font-size: .26rem;
+			line-height: .46rem;
+			width:100%;
+			padding: .10rem .20rem;
+			background-color: transparent;
+			border: none;
+		}
+	}
+	.btn-commit{
+		margin:.20rem .20rem 2.00rem;
+		color:#fff;
+		font-size: .32rem;
+		line-height: .80rem;
+		height: .80rem;
+		text-align: center;
+		background-color: #98C13E;
+		border-radius: 4px;
+	}
+}

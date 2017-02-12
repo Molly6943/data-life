@@ -1,0 +1,40 @@
+<div class="ui-list">
+    <div class="ui-list__item" v-for="item in list" v-touch:tap="onDetailTap($event,$index)">
+        <div class="ui-list__head">
+            <div class="ui-list__head-avatar" style="background-image:url({{item.avatar}})"></div>
+            <div class="ui-list__head-nickname">{{item.nickName}}</div>
+            <div class="ui-list__head-id">ID：{{item.userID}}</div>
+            <div class="ui-list__head-hobby">{{item.hobby}}</div>
+            <div class="ui-list__status" v-show="item.showNow">
+                正在{{item.type}}
+            </div>
+            <div class="ui-list__statusReady" v-show="item.showReady">
+                准备{{item.type}}
+            </div>
+            <div class="ui-list__statusReady" v-show="item.showDone">
+                {{item.type}}
+            </div>
+            <div class="ui-list__stars">
+                <i class="ui-list__star" v-for="star in item.stars" style="background-image:url({{star.pic}})"></i>
+            </div>
+        </div>
+        <div class="ui-list__body">
+            <div class="ui-list__body-content">{{item.thinks}}</div>
+            <div class="ui-list__body-gallery">
+                <div class="ui-list__body-images" style="width:{{(1.625 + 0.2) * item.images.length}}rem">
+                    <div class="ui-list__body-image" style="background-image:url({{pic|trans-photo}})" v-for="pic in item.images"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-list__foot">
+            <div class="ui-list__foot-time">{{item.timeText}}</div>
+            <div class="ui-list__foot-detail">
+                <div class="ui-list__foot-collect">{{item.colNum}}</div>
+                <div class="ui-list__foot-comment">{{item.cmtNum}}</div>
+                <div class="ui-list__foot-unlike" v-touch:tap="onUnlikeTap">{{item.caiNum}}</div>
+                <div class="ui-list__foot-like" v-touch:tap="onlikeTap">{{item.zanNum}}</div>
+                <div class="ui-list__foot-share" v-touch:tap="onShareTap">分享</div>
+            </div>
+        </div>
+    </div>
+</div>

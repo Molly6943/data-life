@@ -1,0 +1,405 @@
+@import "../_config";
+.header {
+    position: relative;
+    background: transparent url("../../image/privacy/header-bg.png") center center repeat;
+    background-size: 100%;
+    overflow: hidden;
+    .header-pic {
+        width: 1.80rem;
+        height: 1.80rem;
+        border: 1px solid #fff;
+        border-radius: 100%;
+        background-image: url("../../image/privacy/icon-avatar.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin: 0.70rem auto 0.10rem;
+        position: relative;
+        .sex {
+            width: 0.33rem;
+            height: 0.33rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100%;
+            position: absolute;
+            right: 0.20rem;
+            bottom: -.05rem;
+        }
+        .icon-man {
+            background-image: url("../../image/privacy/icon-man.png");
+        }
+        .icon-woman {
+            background-image: url("../../image/privacy/icon-woman.png");
+        }
+    }
+    .header-signIn{
+        position: absolute;
+        left: 0.2rem;
+        top: 1rem;
+        @include bgi-cover(url("../../image/privacy/signin1.png"));
+        height: 0.46rem;
+        width: 0.46rem;
+        font-size: 0.32rem;
+        color: #FFF;
+        &>p{
+            position: absolute;
+            right: -1.1rem;
+            top: 0.1rem;
+            width: 1rem;
+            height: 0.32rem;
+        }
+    }
+    .header-signInAfter{
+        position: absolute;
+        left: 0.2rem;
+        top: 1rem;
+        @include bgi-cover(url("../../image/privacy/signin.png"));
+        height: 0.46rem;
+        width: 0.46rem;
+        font-size: 0.32rem;
+        color: #98C13E;
+        &>p{
+            position: absolute;
+            right: -1.1rem;
+            top: 0.1rem;
+            width: 1rem;
+            height: 0.32rem;
+        }
+    }
+    .header-messages {
+        text-align: center;
+        padding-bottom: 0.35rem;
+        .nickname {
+            font-size: 0.36rem;
+            line-height: 0.40rem;
+            color: #D8D8D8;
+        }
+        .account {
+            font-size: 0.20rem;
+            line-height: 0.32rem;
+            color: #D8D8D8;
+        }
+        .operate {
+            overflow: hidden;
+            font-size: 0.24rem;
+            line-height: 0.38rem;
+        }
+        .btn-modify {
+            margin-top: 0.10rem;
+            display: inline-block;
+            color: #98C13E;
+            border: 1px solid #98C13E;
+            border-radius: 0.40rem;
+            padding: 0 0.60rem 0 0.20rem;
+            position: relative;
+            &:after {
+                content: "";
+                width: 0.21rem;
+                height: 0.28rem;
+                position: absolute;
+                right: 0.20rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-image: url("../../image/privacy/icon-pen.png");
+                background-size: 100%;
+            }
+        }
+    }
+}
+.tab-list {
+    background-color: #fff;
+    li {
+        font-size: 0.30rem;
+        line-height: 0.88rem;
+        height: 0.88rem;
+        color: #3D3D3D;
+        border-bottom: 1px solid #E5E5E5;
+        display: flex;
+        &:active {
+            background-color: #c2c4c2;
+        }
+        .icon {
+            width: 0.50rem;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0 0.24rem;
+            background-size: 100%;
+        }
+        .icon-bank {
+            background-image: url("../../image/privacy/icon-bank.png");
+        }
+        .icon-points{
+            background-image: url("../../image/privacy/icon-points.png");
+        }
+        .icon-task {
+            background-image: url("../../image/privacy/icon-task.png");
+        }
+        .icon-home {
+            background-image: url("../../image/privacy/icon-home.png");
+        }
+        .icon-popularize {
+            background-image: url("../../image/privacy/icon-popularize.png");
+        }
+        .icon-verify {
+            background-image: url("../../image/privacy/icon-verify.png");
+        }
+        .icon-trace {
+            background-image: url("../../image/privacy/icon-trace.png");
+        }
+        .icon-history {
+            background-image: url("../../image/privacy/icon-history.png");
+        }
+        .icon-sex {
+            background-image: url("../../image/privacy/icon-sex.png");
+        }
+        .icon-verdict {
+            background-image: url("../../image/privacy/icon-verdict.png");
+        }
+        .icon-setting {
+            background-image: url("../../image/privacy/icon-setting.png");
+        }
+        .mark {
+            flex: 1;
+        }
+        .icon-point {
+            display: none;
+            width: 0.15rem;
+            height: 0.15rem;
+            background-color: #EF4444;
+            border-radius: 100%;
+            margin: 0.37rem 0;
+        }
+        .icon-arrow {
+            width: 0.40rem;
+            height: 100%;
+            margin: 0 0.20rem 0 0.14rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("../../image/privacy/icon-arrow.png");
+            background-size: 0.19rem;
+        }
+        &.s-news {
+            .icon-point {
+                display: block;
+            }
+        }
+    }
+}
+.ui-othersPage{
+    background-color: #fff;
+    height: 100%;
+}
+.ui-othersPage__line {
+    display: block;
+    position: relative;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    background-color: #fff;
+    font-size: 0.24rem;
+    & > .dot {
+        display: block;
+        position: absolute;
+        right: 1.05rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 3px;
+        background-color: grey;
+        border-radius: 50%;
+    }
+}
+.ui-othersPage__age {
+    display: block;
+    position: absolute;
+    left: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.36rem;
+    line-height: 0.36rem;
+    color: #fff;
+    width: 0.84rem;
+    background-color: #fb777b;
+    border-radius: 2px;
+    &>p{
+        position: absolute;
+        left: 0.36rem;
+        font-size: 0.24rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .isSex{
+        position: absolute;
+        left: 0.04rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.26rem;
+        height: 0.26rem;
+    }
+    .is-man{
+        @include bgi-cover(url("../../image/privacy/man.png"));
+    }
+    .is-woman{
+        position: absolute;
+        left: 0rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.4rem;
+        height: 0.4rem;
+        @include bgi-full(url("../../image/privacy/woman.png"));
+    }
+}
+.ui-othersPage__XZ {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1.1rem;
+    height: 0.36rem;
+    line-height: 0.36rem;
+    text-align: center;
+    color: #fff;
+    width: 0.84rem;
+    background-color: #66abc9;
+    border-radius: 2px;
+}
+.ui-othersPage__distence {
+    display: block;
+    position: absolute;
+    right: 1.2rem;
+    color: grey;
+}
+.ui-othersPage__time {
+    display: block;
+    position: absolute;
+    right: 0.2rem;
+    color: grey;
+}
+.ui-othersPage__circle {
+    display: block;
+    position: relative;
+    padding-left: 0.2rem;
+    padding-top: 0.2rem;
+    background-color: #fff;
+    border: 1px #eee solid;
+    & > p {
+        font-size: 0.32rem;
+    }
+}
+.ui-othersPage__gallery {
+    background-color: #FFF;
+    overflow: hidden;
+    margin-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+.ui-othersPage__item {
+    display: block;
+    float: left;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 0.1rem;
+}
+.ui-othersPage__rightBtn {
+    display: block;
+    position: absolute;
+    right: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.18rem;
+    height: 0.4rem;
+    @include bgi-full(url("../../image/privacy/task/back.png"));
+}
+.ui-othersPage__info{
+    display: block;
+    background-color: #fff;
+    padding-top: 0.2rem;
+    padding-left: 0.2rem;
+    height: 1.3rem;
+    // border: 1px #eee solid;
+    &>p{
+        font-size: 0.32rem;
+    }
+    &>div{
+        padding-top: 0.3rem;
+        font-size: 0.28rem;
+        color: grey;
+    }
+}
+.ui-othersPage__credit{
+    display: block;
+    background-color: #fff;
+    padding-top: 0.2rem;
+    padding-left: 0.2rem;
+    height: 1.3rem;
+    border: 1px #eee solid;
+    &>p{
+        font-size: 0.32rem;
+    }
+}
+.ui-othersPage__starItem{
+    display: block;
+    float: left;
+    margin-top: 0.2rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 0.3rem;
+    height: 0.3rem;
+}
+.ui-othersPage__bottom{
+    height: 0.88rem;
+    width: 100%;
+}
+.ui-othersPage__fixed{
+    display: flex;
+    flex-flow: row;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    font-size:0;
+    background-color: #38373d;
+}
+.ui-othersPage__chat{
+    flex: 1;
+    position: relative;
+    &>p{
+        position: absolute;
+        left: 2rem;
+        font-size: 0.32rem;
+        color: #fff;
+    }
+    &>.chat{
+        position: absolute;
+        left: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        @include bgi-full(url("../../image/privacy/chat.png"));
+        width: 0.6rem;
+        height: 0.5rem;
+    }
+}
+.ui-othersPage__attention{
+    flex:1;
+    position: relative;
+    &>p{
+        position: absolute;
+        left: 2rem;
+        font-size: 0.32rem;
+        color: #fff;
+    }
+    &>.attention{
+        position: absolute;
+        left: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        @include bgi-full(url("../../image/privacy/attention.png"));
+        width: 0.6rem;
+        height: 0.5rem;
+    }
+}

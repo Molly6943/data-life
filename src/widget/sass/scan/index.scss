@@ -1,0 +1,179 @@
+// 导入公共scss模块
+// @import "../_config";
+@import "../base";
+@import "../config";
+html,
+body {
+    background: transparent;
+    overflow: hidden;
+}
+
+.ui-scan {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ui-scan__mask {
+    display: block;
+    box-sizing: content-box;
+    width: 80%;
+    padding-bottom: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    border: 0px solid #000;
+    border-left-width: 300px;
+    border-right-width: 300px;
+    border-top-width: 500px;
+    border-bottom-width: 500px;
+    opacity: 0.5;
+}
+
+.ui-scan__body {
+    display: block;
+    width: 80%;
+    padding-bottom: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.ui-scan__border {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    &.is-a {
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 15px;
+            background-color: #fff;
+        }
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 4px;
+            background-color: #fff;
+        }
+    }
+    &.is-b {
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 4px;
+            height: 15px;
+            background-color: #fff;
+        }
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 15px;
+            height: 4px;
+            background-color: #fff;
+        }
+    }
+    &.is-c {
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            height: 15px;
+            background-color: #fff;
+        }
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 15px;
+            height: 4px;
+            background-color: #fff;
+        }
+    }
+    &.is-d {
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 4px;
+            height: 15px;
+            background-color: #fff;
+        }
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 15px;
+            height: 4px;
+            background-color: #fff;
+        }
+    }
+}
+
+.ui-scan__line {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    animation: circle linear 3s infinite;
+    &>img {
+        width: 100%;
+    }
+}
+
+@keyframes circle {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(0, 95%, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+
+@-webkit-keyframes circle {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(0, 95%, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}

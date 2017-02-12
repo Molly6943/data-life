@@ -1,0 +1,21 @@
+<div class="setting-main">
+	<ul class="tab-list">
+		<li v-touch:tap="onSettingFeedbackTap">
+			<div class="mark">应用反馈</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li>
+			<div class="mark">设置密码</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onSettingCommonTap">
+			<div class="mark">通用</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li>
+			<div class="mark">关于数说人生</div>
+			<div class="icon-arrow"></div>
+		</li>
+	</ul>
+	<div class="btn-signout" v-touch:tap="onSignoutTap()">退出登录</div>
+</div>

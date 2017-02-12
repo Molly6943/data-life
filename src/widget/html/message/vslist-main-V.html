@@ -1,0 +1,16 @@
+<div class="ui-list">
+    <div class="ui-list__item" v-for="item in list" v-touch:tap="onDetailTap(item.complaintID)">
+        <div class="ui-list__user is-left">
+            <div class="ui-list__image" style="background-image:url({{item.fromAvatar}})"></div>
+            <div class="ui-list__vote">{{item.fromVoteNum}}</div>
+            <div class="ui-list__nickname">{{item.fromName}}</div>
+            <div class="ui-list__percentage"><i style="width:25%"></i></div>
+        </div>
+        <div class="ui-list__user is-right">
+            <div class="ui-list__image" style="background-image:url({{item.toAvatar}})"></div>
+            <div class="ui-list__vote">{{item.toVoteNum}}</div>
+            <div class="ui-list__nickname">{{item.toName}}</div>
+            <div class="ui-list__percentage"><i style="width:100%"></i></div>
+        </div>
+    </div>
+</div>

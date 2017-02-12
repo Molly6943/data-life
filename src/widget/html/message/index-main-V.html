@@ -1,0 +1,5 @@
+<div class="ui-bar">
+    <div class="ui-bar__item" v-for="option in options" v-bind:class="{'isTouch': active == $index+1}" v-touch:tap="onBarTap($index+1)">
+        {{option.barText}}
+    </div>
+</div>

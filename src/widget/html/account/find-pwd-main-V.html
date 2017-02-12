@@ -1,0 +1,10 @@
+<div class="find-pwd">
+	<div class="input-group">
+		<input v-model="account" type="text" placeholder="手机号">
+		<div class="btn-validate" v-touch:tap="sendCode">验证</div>
+	</div>
+	<div class="input-group">
+		<input v-model="code" type="text" placeholder="验证码">
+	</div>
+	<div v-touch:tap="onNextTap" class="btn-next">下一步</div>
+</div>

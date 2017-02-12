@@ -1,0 +1,21 @@
+<div class="ui-trajectoryTrack">
+    <div class="chart-pie">
+        <!-- <div class="g-block">
+            <span class="btn-changeList g-left" v-on:click="changeRsbTab(2)">切换数据列表</span>
+        </div> -->
+        <div id="rsb-pie" class="pie"></div>
+        <!-- <div class="count-box">
+            <p class="count-title">今日累计数值</p>
+            <p class="count-content">合计<span class="count-num">3000.05</span><span class="count-unit">RH</span></p>
+        </div> -->
+        <dl class="type-list">
+            <dt>
+                <span class="mark">类别</span>
+            </dt>
+            <dd v-for="item in list">
+                <p class="name">{{item.name}}</p>
+                <!-- <p class="count">0.006 R</p> -->
+            </dd>
+        </dl>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="bank-chart-main">
+    <!-- <div class="chart-pie" v-show="showRsbPie"> -->
+        <!-- <div class="g-block">
+            <span class="btn-changeList g-left" v-on:click="changeRsbTab(2)">切换数据列表</span>
+        </div> -->
+        <div id="chart-pie" class="pie"></div>
+        <!-- <div class="count-box">
+            <p class="count-title">今日累计数值</p>
+            <p class="count-content">合计<span class="count-num">3000.05</span><span class="count-unit">RH</span></p>
+        </div> -->
+        <dl class="type-list">
+            <dt>
+                <span class="mark">类别</span>
+            </dt>
+            <dd>
+                <p class="name">悬赏金额&nbsp;{{setReward | trans-price}}</p>
+            </dd>
+            <dd>
+                <p class="name">打赏金额&nbsp;{{giveReward | trans-price}}</p>
+            </dd>
+            <dd>
+                <p class="name">求赏金额&nbsp;{{seekReward | trans-price}}</p>
+            </dd>
+            <dd>
+                <p class="name">定金金额&nbsp;{{Deposit | trans-price}}</p>
+            </dd>
+        </dl>
+    <!-- </div> -->
+</div>

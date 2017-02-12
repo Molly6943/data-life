@@ -1,0 +1,506 @@
+@import "../_config";
+
+$red : #D15757;
+$blue : #87ABE1;
+
+.ui-duel {
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    // overflow: hidden;
+    // position: absolute;
+    // position: relative;
+    background: #e4e4e4;
+    z-index: 2;
+}
+.ui-duel__main {
+    height: 3rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .2);
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.ui-duel__user {
+    height: 100%;
+    width: 3.40rem;
+    position: relative;
+    // overflow: hidden;
+    svg {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0.4rem;
+        height: 0.4rem;
+        margin-top: -0.2rem;
+    }
+    &.is-red {
+        float: left;
+        background: $red;
+        background: linear-gradient(top left, #F07474 0%, $red 40%, $red 100%);
+        svg {
+            fill: $red;
+        }
+    }
+    &.is-blue {
+        float: right;
+        background: $blue;
+        background: linear-gradient(top right, #BCD5F2 0%, $blue 40%, $blue 100%);
+        svg {
+            fill: $blue;
+        }
+    }
+}
+.ui-duel__line {
+    overflow: hidden;
+    height: 100%;
+    background: $blue;
+    @include bgi-full(url(../../image/message/vote-bg.png));
+}
+.ui-duel__user-avatar {
+    margin: 0.4rem auto 0;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 8%;
+    overflow: hidden;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.ui-duel__user-name {
+    color: #fff;
+    text-align: center;
+    font-size: 0.32rem;
+    height: 0.42rem;
+    line-height: 0.42rem;
+    padding: 0 0.2rem;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.ui-duel__user-support {
+    color: #fff;
+    text-align: center;
+    font-size: 0.24rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    padding: 0 0.2rem;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.ui-duel__user-star {
+    font-size: 0;
+    height: 0.2rem;
+    text-align: center;
+    i {
+        display: inline-block;
+        height: 0.2rem;
+        width: 0.2rem;
+        margin-left: 0.02rem;
+        @include bgi-full(url(../../image/message/vote-star.png));
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+.ui-duel__vs {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+.ui-duel__vs-title {
+    color: #fff;
+    font-size: 0.6rem;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    font-size: bold;
+    letter-spacing: 0.1rem;
+    text-indent: 0.1rem;
+}
+.ui-duel__vs-time {
+    color: #fff;
+    font-size: 0.2rem;
+    height: 0.24rem;
+    line-height: 0.24rem;
+}
+.ui-duel__aside {
+    height: 1.44rem;
+    overflow: hidden;
+    position: relative;
+}
+.ui-duel__progress {
+    margin: 0.35rem auto 0;
+    width: 4.7rem;
+    height: 0.3rem;
+    background: $blue;
+    i {
+        display: block;
+        height: 100%;
+        background: $red;
+    }
+}
+.ui-duel__deadline {
+    color: #000;
+    opacity: .5;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.24rem;
+    text-align: center;
+    margin-top: 0.15rem;
+}
+.ui-detail {
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 100%;
+    // overflow: hidden;
+    // position: absolute;
+    // box-sizing: border-box;
+    display: block;
+    padding: 0 0.2rem;
+    // padding-top: 2.6rem + 1.44;
+    // margin-top: 0.4rem;
+    // padding-bottom: 0.68rem;
+    background-color: #ffffff;
+    z-index: 1;
+}
+.ui-detail__wrap {
+    width: 100%;
+    // height: 100%;
+    overflow: hidden;
+    position: relative;
+    // box-sizing: border-box;
+    // padding-top: 0.1rem + 0.6 * 5 + 0.1;
+    padding-bottom: 0.3rem;
+}
+.ui-detail__wrap-top {
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    overflow: hidden;
+    // position: absolute;
+}
+.ui-detail__line {
+    display: block;
+    position: relative;
+    // margin-left: 0.2rem;
+    // font-size: 0;
+    // border-bottom: 1px #eee solid;
+    padding-bottom: 0.2rem;
+}
+.ui-detail__leftIcon {
+    position: absolute;
+    left: 0rem;
+    top: 0.3rem;
+    width: 0.3rem;
+    height: 0.4rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.ui-detail__title {
+    font-size: 0.32rem;
+    margin-left: 0.5rem;
+    padding-top: 0.3rem;
+    color: #727272;
+}
+.ui-detail__subTitle {
+    font-size: 0.28rem;
+    margin-left: 0.5rem;
+    padding-top: 0.2rem;
+    // color: #727272;
+}
+.ui-detail__wrap-bottom {
+    width: 100%;
+    // height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+%ui-detail__ceil {
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.3rem;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+}
+%ui-detail__label {
+    float: left;
+    font-size: 0.32rem;
+    color: #727272;
+    width: 0.7rem;
+    box-sizing: content-box;
+}
+.ui-detail__activity {
+    @extend %ui-detail__ceil;
+    margin-top: 0.2rem;
+}
+.ui-detail__activity-label {
+    @extend %ui-detail__label;
+    position: relative;
+    padding-left: 0.5rem;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 0.3rem;
+        height: 0.24rem;
+        @include bgi-full(url(../../image/message/vote-activity.png));
+    }
+}
+.ui-detail__activity-time {
+    margin-top: 0.26rem;
+    float: right;
+    color: #727272;
+    font-size: 0.28rem;
+    position: relative;
+    padding-left: 0.34rem;
+    padding-right: 0.05rem;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 0.24rem;
+        height: 0.24rem;
+        @include bgi-full(url(../../image/message/vote-time.png));
+    }
+}
+.ui-detail__location {
+    @extend %ui-detail__ceil;
+}
+.ui-detail__location-label {
+    @extend %ui-detail__label;
+    position: relative;
+    padding-left: 0.5rem;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 0.24rem;
+        height: 0.32rem;
+        @include bgi-full(url(../../image/message/vote-location.png));
+    }
+}
+.ui-detail__rewards {
+    div {
+        width: 50%;
+        float: left;
+        height: 0.6rem;
+        line-height: 0.6rem;
+        font-size: 0.4rem;
+        color: #DF6363;
+        padding-left: 0.4rem;
+        position: relative;
+        &::before {
+            @extend %ui-detail__label;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 0.35rem;
+            height: 0.35rem;
+            margin-top: 1px;
+        }
+    }
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.ui-detail__rewards1 {
+    &::before {
+        content: "悬赏";
+    }
+    &::after {
+        @include bgi-full(url(../../image/message/vote-rewarsd1.png));
+    }
+}
+.ui-detail__rewards2 {
+    &::before {
+        content: "打赏";
+    }
+    &::after {
+        @include bgi-full(url(../../image/message/vote-rewarsd2.png));
+    }
+}
+.ui-detail__rewards3 {
+    &::before {
+        content: "求赏";
+    }
+    &::after {
+        @include bgi-full(url(../../image/message/vote-rewarsd3.png));
+    }
+}
+.ui-detail__rewards4 {
+    &::before {
+        content: "定金";
+    }
+    &::after {
+        @include bgi-full(url(../../image/message/vote-rewarsd4.png));
+    }
+}
+.ui-detail__date {
+    @extend %ui-detail__ceil;
+    color: #828282;
+    font-size: 0.24rem;
+    // margin-bottom: 0.1rem;
+}
+.ui-detail__message {
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    padding-top: 0.35rem + 0.5;
+}
+.ui-detail__message-label {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    // top: 0.35rem;
+    width: 3.8rem;
+    height: 0.8rem;
+    z-index: 3;
+    transform: translateY(-0.48rem);
+    svg {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: -0.07rem;
+    }
+    .is-red & {
+        svg polygon {
+            fill: $red;
+        }
+    }
+    .is-blue & {
+        svg polygon {
+            fill: $blue;
+        }
+    }
+}
+.ui-detail__message-nickname {
+    position: absolute;
+    top: 0.1rem;
+    // left: 0;
+    color: #fff;
+    height: 0.3.5rem;
+    line-height: 0.3.5rem;
+    font-size: 0.32rem;
+    width: 3rem;
+    padding-left: 0.35rem;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    &::before {
+        content: "来自";
+        font-size: 0.24rem;
+        padding-right: 0.1rem;
+    }
+}
+.ui-detail__message-vote {
+    left: 0;
+    top: 0.35rem;
+    width: 100%;
+    height: 0.5rem;
+    position: absolute;
+    line-height: 0.5rem;
+    padding-left: 4.6rem;
+    font-size: 0.4rem;
+    .is-red & {
+        color: $red;
+    }
+    .is-blue & {
+        color: $blue;
+    }
+    &::before {
+        content: "支持数";
+        color: #B7B7B7;
+        font-size: 0.24rem;
+        padding-right: 0.1rem;
+    }
+    &::after {
+        content: "票";
+        padding-left: 0.03rem;
+    }
+}
+.ui-detail__message-main {
+    width: 100%;
+    height: 100%;
+    // height: 0.9rem;
+    position: relative;
+    color: #7E7E7E;
+    font-size: 0.28rem;
+    line-height: normal;
+    padding: 0.1rem 0.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.2rem;
+    .is-red & {
+        border-color: $red;
+    }
+    .is-blue & {
+        border-color: $blue;
+    }
+}
+.ui-support {
+    // left: 0;
+    // bottom: 0;
+    width: 100%;
+    height: 0.88rem;
+    overflow: hidden;
+    // position: absolute;
+    z-index: 3;
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.ui-support__btn {
+    float: left;
+    width: 50%;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    text-align: center;
+    font-size: 0.32rem;
+    color: #fff;
+    &.is-red {
+        background: $red;
+    }
+    &.is-blue {
+        background: $blue;
+    }
+}
+.ui-response{
+    width: 100%;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    text-align: center;
+    font-size: 0.36rem;
+    color: #fff;
+    background: $blue;
+}

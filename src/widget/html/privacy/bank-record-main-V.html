@@ -1,0 +1,32 @@
+<div class="bank-record-main">
+	<ul class="table">
+		<li>
+			<div class="input-group">
+				<label for="type">分&emsp;&emsp;类</label>
+				<span>{{label}}</span>
+			</div>
+		</li>
+		<li>
+			<div class="input-group" v-touch:tap="onTimeTap(1)">
+				<label for="duration">开始时间</label>
+				<span>
+                    {{starttime}}
+                </span>
+			</div>
+			<div class="input-group" v-touch:tap="onTimeTap(2)">
+				<label for="unit">结束时间</label>
+				<span>{{endtime}}</span>
+			</div>
+		</li>
+		<!-- <li>
+			<div class="input-group">
+			<label for="amount">今日数值</label>
+			<input type="text" value="">
+		</div>
+		</li> -->
+	</ul>
+	<div class="btn-list">
+		<div class="btn-clear" v-touch:tap="onSaveTap">保存</div>
+		<div class="btn-rerecord" v-touch:tap="onRecordTap">再记一笔</div>
+	</div>
+</div>

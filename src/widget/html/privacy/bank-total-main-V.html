@@ -1,0 +1,25 @@
+<div class="bank-total-main">
+	<div class="total-box">
+		<div class="main">
+			<div class="title">
+				<span class="mark">当前累计分数</span>
+				<span class="btn-statement">积分说明</span>
+			</div>
+			<div class="content">
+				<span class="score">{{total}}</span>分
+			</div>
+		</div>
+	</div>
+	<dl class="record-list">
+		<!-- <dt>最近30天累计分数记录</dt> -->
+		<dd v-for="item in list">
+			<div class="g-left">
+				<span class="name">{{item.type}}积分</span>
+				<span class="date">{{item.date}}</span>
+			</div>
+			<div class="g-right">
+				<span v-bind:class="{'score':item.point>=0,'noscore':item.point<0}">{{item.point>=0?'+':'-'}}{{item.point}}</span>
+			</div>
+		</dd>
+	</dl>
+</div>

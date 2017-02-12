@@ -1,0 +1,69 @@
+<div class="information-main">
+	<ul class="tab-list">
+		<li class="avatar" v-touch:tap="onItemTap('avatar')">
+			<div class="mark">头像</div>
+			<div class="pic" style="background-image:url({{avatar}});"></div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li>
+			<div class="mark">账号</div>
+			<div class="message">{{account}}&nbsp;&nbsp;&nbsp;</div>
+			<!-- <div class="icon-arrow"></div> -->
+		</li>
+		<li v-touch:tap="onItemTap('nickName')">
+			<div class="mark">昵称</div>
+			<div class="message">{{nickName}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('sex')">
+			<div class="mark">性别</div>
+			<div class="message">{{sex}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('region')">
+			<div class="mark">所在地</div>
+			<div class="message">{{province}}&nbsp;{{city}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('phone')">
+			<div class="mark">联系方式</div>
+            <div class="message">{{phone}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+        <li v-touch:tap="onItemTap('hobby')">
+			<div class="mark">兴趣爱好</div>
+            <div class="message">{{hobby}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('company')">
+			<div class="mark">所在单位</div>
+            <div class="message">{{company}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('industry')">
+			<div class="mark">行业类别</div>
+            <div class="message">{{industry}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('workyear')">
+			<div class="mark">工作年限</div>
+            <div class="message">{{workyear}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('workExp')">
+			<div class="mark">工作经验</div>
+            <div class="message">{{workExp}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('profile')">
+			<div class="mark">为自己代言</div>
+            <div class="message">{{profile}}</div>
+			<div class="icon-arrow"></div>
+		</li>
+		<li v-touch:tap="onItemTap('QRcode')">
+			<div class="mark">我的二维码</div>
+			<div class="qr-code"></div>
+			<div class="icon-arrow"></div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,90 @@
+<div class="task-chart-main">
+	<div class="list-data" v-show="showList">
+		<ul>
+		    <li>
+				<span class="type">发布任务</span>
+				<span class="date">{{date}}</span>
+				<span class="amount">{{myXS}}</span>
+			</li>
+			<li>
+				<span class="type">接受任务</span>
+				<span class="date">{{date}}</span>
+				<span class="amount">{{getXS}}</span>
+			</li>
+			<!-- <li>
+				<span class="type">组团任务</span>
+				<span class="date">2016/05/15</span>
+				<span class="amount">{{actionNum}}</span>
+			</li> -->
+		</ul>
+		<ul>
+			<li>
+				<span class="type">发布业务</span>
+				<span class="date">{{date}}</span>
+				<span class="amount">{{myQS}}</span>
+			</li>
+			<li>
+				<span class="type">接受业务</span>
+				<span class="date">{{date}}</span>
+				<span class="amount">{{getQS}}</span>
+			</li>
+			<!-- <li>
+				<span class="type">组团业务</span>
+				<span class="date">2016/05/15</span>
+				<span class="amount">{{actionNum}}</span>
+			</li> -->
+		</ul>
+		<div class="g-block">
+			<span class="btn-changePie g-right" v-on:click="changeTab(1)">切换图形</span>
+		</div>
+	</div>
+	<div class="chart-pie" v-show="showPie">
+		<div class="g-block">
+			<span class="btn-changeList g-left" v-on:click="changeTab(0)">切换数据列表</span>
+		</div>
+		<div class="g-chart chart-1">
+			<div class="g-left">
+				<div id="pie-1" class="pie"></div>
+			</div>
+			<div class="g-right">
+				<p class="sum">总数<span class="num">{{XStotal}}</span></p>
+				<ul class="type-list">
+					<li>
+						<span class="type">发布任务</span>
+						<span class="amount">{{myXS}}</span>
+					</li>
+					<li>
+						<span class="type">接受任务</span>
+						<span class="amount">{{getXS}}</span>
+					</li>
+					<!-- <li>
+						<span class="type">组团任务</span>
+						<span class="amount">{{actionNum}}</span>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+		<div class="g-chart chart-2">
+			<div class="g-left">
+				<div id="pie-2" class="pie"></div>
+			</div>
+			<div class="g-right">
+				<p class="sum">总数<span class="num">{{QStotal}}</span></p>
+				<ul class="type-list">
+					<li>
+						<span class="type">发布业务</span>
+						<span class="amount">{{myQS}}</span>
+					</li>
+					<li>
+						<span class="type">接受业务</span>
+						<span class="amount">{{getQS}}</span>
+					</li>
+					<!-- <li>
+						<span class="type">组团业务</span>
+						<span class="amount">{{actionNum}}</span>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,104 @@
+<div class="ui-detail">
+    <div class="ui-detail__Body" v-touch:tap="onBodyTap">
+        <div class="ui-detail__head">
+            <div class="ui-detail__head-avatar" style="background-image:url({{detail.avatar}})" v-touch:tap="onOthersPageTap"></div>
+            <div class="ui-detail__head-nickname">{{detail.nickName}}</div>
+            <div class="ui-detail__head-id">ID：{{detail.userID}}</div>
+            <div class="ui-detail__head-hobby">{{detail.hobby}}</div>
+            <!-- <div class="ui-detail__head-hobby" v-show="showContent">{{detail.content}}</div> -->
+            <div class="ui-detail__status" v-show="detail.showNow">
+                {{detail.type}}
+            </div>
+            <div class="ui-detail__statusReady" v-show="!detail.showNow">
+                {{detail.type}}
+            </div>
+            <div class="ui-detail__stars">
+                <div class="ui-detail__star" v-for="star in stars" style="background-image:url({{star.pic}})"></div>
+            </div>
+            <!-- <div class="ui-detail__head-status is-live"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></div> -->
+        </div>
+        <div class="ui-detail__body">
+            <div class="ui-detail__line" v-show="showLine">
+                <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/publish-activity.png)">
+                </div>
+                <div class="ui-detail__title">
+                    活动
+                </div>
+                <div class="ui-detail__subTitle">
+                    {{detail.content}}
+                </div>
+            </div>
+            <div class="ui-detail__line" v-show="showLine">
+                <div class="ui-detail__leftIcon" style="background-image:url(../../image/privacy/task/think.png)">
+                </div>
+                <div class="ui-detail__title">
+                    想法
+                </div>
+                <div class="ui-detail__subTitle">
+                    {{detail.thinks}}
+                </div>
+            </div>
+            <div class="ui-detail__body-content" v-show="showContent">{{detail.thinks}}</div>
+            <!-- <div class="ui-detail__body-content" v-show="showThinks">{{detail.thinks}}</div> -->
+            <div class="ui-detail__figure" v-show="showFigure">
+                <img src="{{detail.figure|trans-photo}}" alt="" style="width:{{winWidth}};height:{{winHeight}}">
+            </div>
+            <div class="ui-detail__body-gallery">
+                <div class="ui-detail__body-images" style="width:{{ (1.625 + 0.2) * detail.likeImages.length}}rem">
+                    <div class="ui-detail__body-image" style="background-image:url({{pic|trans-photo}})" v-for="pic in detail.likeImages" v-touch:tap="onPicTap($index)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-detail__foot">
+            <div class="ui-detail__foot-time">{{detail.timeText}}</div>
+            <div class="ui-detail__foot-detail">
+                <div class="ui-detail__foot-collect">{{detail.colNum}}</div>
+                <div class="ui-detail__foot-comment">{{detail.cmtNum}}</div>
+                <div class="ui-detail__foot-unlike">{{detail.caiNum}}</div>
+                <div class="ui-detail__foot-like">{{detail.zanNum}}</div>
+                <div class="ui-detail__foot-share">分享</div>
+            </div>
+        </div>
+        <div class="ui-detail__like">
+            <div class="ui-detail__like-head">
+                <div class="ui-detail__like-num">({{detail.zanNum}})</div>
+                <div class="icon-arrow"></div>
+            </div>
+            <div class="ui-detail__like-list">
+                <div class="ui-detail__like-avatar" style="background-image:url({{pic.image}})" v-for="pic in likeAvatar"></div>
+            </div>
+        </div>
+        <div class="ui-detail__comment">
+            <div class="ui-detail__comment-head">
+                <div class="ui-detail__comment-num">({{detail.cmtNum}})</div>
+            </div>
+            <div class="ui-detail__comment-list">
+                <div class="ui-detail__comment-item" v-for="item in commentList">
+                    <div class="ui-detail__comment-avatar" style="background-image:url({{item.commentAvatar}})"></div>
+                    <div class="ui-detail__comment-nickname">
+                        <div class="ui-detail__comment-time">{{item.commentTime}}</div>
+                        <div class="ui-detail__comment-nickname">{{item.commentName}}</div>
+                    </div>
+                    <div class="ui-detail__comment-content">{{{item.commentContent}}}</div>
+                    <div class="ui-detail__reply" v-show="showReplay">
+                        <div class="ui-detail__reply-item">
+                            <div class="ui-detail__reply-head">回复：{{item.replyName}}</div>
+                            <div class="ui-detail__reply-content">{{item.replyContent}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-detail__footer">
+        <div class="ui-detail__footerFiexd">
+            <div class="ui-detail__footerItem is-collect  " style="background-image:url({{collect}})"  v-touch:tap="onCollectTap"></div>
+            <div class="ui-detail__footerItem is-comment " v-on:click="onCommentTap"></div>
+            <div class="ui-detail__footerItem is-share " v-touch:tap="onShareTap"></div>
+            <div class="ui-detail__footerItem is-like " style="background-image:url({{like}})"  v-touch:tap="onLiketap"></div>
+            <div class="ui-detail__footerItem is-unlike " style="background-image:url({{unlike}})"  v-touch:tap="onUnlikeTap"></div>
+            <!-- <div class="ui-detail__footerPostRewarsd"></div>
+            <div class="ui-detail__footerDemandRewarsd"></div> -->
+        </div>
+    </div>
+</div>

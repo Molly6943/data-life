@@ -1,0 +1,20 @@
+<div class="ui-nearby">
+    <div class="ui-nearby__search">
+        <form onsubmit="return false">
+            <input type="search" placeholder="搜索附近位置" value="" @keyup.enter="onEnter" v-model="keyWords"></input>
+        </form>
+        <span class="search" data-action="search" v-touch:tap="onSearchTap($event)"></span>
+    </div>
+    <div class="ui-nearby__row">
+        不显示位置
+        <div class="icon-right" v-show="show" v-touch:tap="chooseLocation()">
+        </div>
+    </div>
+    <div class="ui-nearby__list">
+        <div class="ui-nearby__item" v-for="item in list" v-touch:tap="chooseLocation($index)">
+            {{item.name}}
+            <div class="icon-right" v-show="location($index)">
+            </div>
+        </div>
+    </div>
+</div>

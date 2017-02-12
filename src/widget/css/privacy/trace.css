@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+.trace-main {
+  overflow: hidden; }
+  .trace-main li {
+    margin: .40rem .30rem;
+    height: 1.06rem;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    font-size: .32rem;
+    background-color: currentColor;
+    overflow: hidden; }
+    .trace-main li .box {
+      height: 100%;
+      line-height: .54rem;
+      padding: .26rem 0;
+      background-color: #fff;
+      margin-left: 3px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex; }
+    .trace-main li .name {
+      padding: 0 .30rem;
+      border-right: 1px solid #9E9E9E;
+      color: currentColor; }
+    .trace-main li .date {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+         -moz-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      color: #6F6F6F;
+      font-size: .20rem;
+      margin-left: .50rem; }
+      .trace-main li .date span {
+        display: inline-block; }
+      .trace-main li .date .time {
+        font-size: .36rem;
+        margin-right: .10rem; }
+      .trace-main li .date .till {
+        margin: 0 .18rem; }
+    .trace-main li .mode {
+      padding: 0 .30rem;
+      color: #7E7E7E; }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRyYWNlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxrQkFBaUI7QUFDakI7O0lBRUc7QUFDSDs7SUFFRztBQUNILDBCQUF5QjtBQUN6Qjs7O0lBR0c7QUFDSCxtQkFBa0I7QUFDbEIsa0JBQWlCO0FBQ2pCOzs7OztJQUtHO0FBQ0gsVUFBUztBQUNULFVBQVM7QUFDVCxhQUFZO0FBQ1osWUFBVztBQUNYLFlBQVc7QUFDWCxXQUFVO0FBQ1YsWUFBVztBQUNYLFdBQVU7QUFDVixXQUFVO0FBQ1YsV0FBVTtBQUNWLFNBQVE7QUFDUixXQUFVO0FBQ1YsV0FBVTtBQUNWLFdBQVU7QUFDVixZQUFXO0FBQ1g7RUFDRSxrQkFBaUIsRUFBRTtFQUNuQjtJQUNFLHVCQUFzQjtJQUN0QixpQkFBZ0I7SUFDaEIsNEJBQW1CO09BQW5CLHlCQUFtQjtZQUFuQixvQkFBbUI7SUFDbkIsd0JBQXVCO0lBQ3ZCLG9EQUEyQztPQUEzQyxpREFBMkM7WUFBM0MsNENBQTJDO0lBQzNDLG1CQUFrQjtJQUNsQixnQ0FBK0I7SUFDL0Isa0JBQWlCLEVBQUU7SUFDbkI7TUFDRSxjQUFhO01BQ2IscUJBQW9CO01BQ3BCLG1CQUFrQjtNQUNsQix3QkFBdUI7TUFDdkIsa0JBQWlCO01BQ2pCLHNCQUFjO01BQWQsdUJBQWM7TUFBZCxtQkFBYztNQUFkLHNCQUFjO01BQWQsZUFBYyxFQUFFO0lBQ2xCO01BQ0UsbUJBQWtCO01BQ2xCLGlDQUFnQztNQUNoQyxxQkFBb0IsRUFBRTtJQUN4QjtNQUNFLHFCQUFRO01BQVIsaUJBQVE7U0FBUixrQkFBUTtVQUFSLGFBQVE7Y0FBUixTQUFRO01BQ1IsZ0JBQWU7TUFDZixtQkFBa0I7TUFDbEIscUJBQW9CLEVBQUU7TUFDdEI7UUFDRSx1QkFBc0IsRUFBRTtNQUMxQjtRQUNFLG1CQUFrQjtRQUNsQixzQkFBcUIsRUFBRTtNQUN6QjtRQUNFLGtCQUFpQixFQUFFO0lBQ3ZCO01BQ0UsbUJBQWtCO01BQ2xCLGdCQUFlLEVBQUUiLCJmaWxlIjoicHJpdmFjeS90cmFjZS5jc3MiLCJzb3VyY2VSb290IjoiLi4vc2Fzcy8ifQ== */

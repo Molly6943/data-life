@@ -1,0 +1,93 @@
+@import "../_config";
+
+.trace-main{
+	overflow: hidden;
+	li{
+		margin:.40rem .30rem;
+		height: 1.06rem;
+		border-radius: 3px;
+		background-color: #fff;
+		box-shadow: 0 1px 1px 0 rgba(#000, 0.2);
+		font-size: .32rem;
+		background-color: currentColor;
+		overflow: hidden;
+		// &:nth-child(1){
+		// 	color:#F5694B;
+		// }
+		// &:nth-child(2){
+		// 	color:#FEAE08;
+		// }
+		// &:nth-child(3){
+		// 	color:#06AD92;
+		// }
+		// &:nth-child(4){
+		// 	color:#87CB14;
+		// }
+		// &:nth-child(5){
+		// 	color:#13E1C7;
+		// }
+		// &:nth-child(6){
+		// 	color:#BB2FD8;
+		// }
+		// &:nth-child(7){
+		// 	color:#DDC698;
+		// }
+		// &:nth-child(8){
+		// 	color:#7FB8C4;
+		// }
+		// &:nth-child(9){
+		// 	color:#3384FF;
+		// }
+		// &:nth-child(10){
+		// 	color:#FF9076;
+		// }
+		// &:nth-child(11){
+		// 	color:#AF4373;
+		// }
+		// &:nth-child(12){
+		// 	color:#FFFC15;
+		// }
+		// &:nth-child(13){
+		// 	color:#FFC8B2;
+		// }
+		// &:nth-child(14){
+		// 	color:#7889A2;
+		// }
+		// &:nth-child(15){
+		// 	color:#8D6725;
+		// }
+		.box{
+			height: 100%;
+			line-height: .54rem;
+			padding: .26rem 0;
+			background-color: #fff;
+			margin-left: 3px;
+			display: flex;
+		}
+		.name{
+			padding:0 .30rem;
+			border-right: 1px solid #9E9E9E;
+			color:currentColor;
+		}
+		.date{
+			flex:1;
+			color:#6F6F6F;
+			font-size: .20rem;
+			margin-left: .50rem;
+			span{
+				display: inline-block;
+			}
+			.time{
+				font-size: .36rem;
+				margin-right: .10rem;
+			}
+			.till{
+				margin:0 .18rem;
+			}
+		}
+		.mode{
+			padding: 0 .30rem;
+			color:#7E7E7E;
+		}
+	}
+}

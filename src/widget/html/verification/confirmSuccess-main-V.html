@@ -1,0 +1,9 @@
+<div class="ui-list__itemBlock">
+    <div class="ui-list__item">
+        <span class="ui-list__itemName">{{ name }}</span>
+        <span class="ui-lst__itemConfirm">{{ type | transType }}</span>
+        <b>{{ identity }}</b>
+    </div>
+    <span class="ui-list__itemTime">提交时间：{{ time | transTime }}</span>
+    <div v-if="type == 3" class="ui-list__buttom" v-touch:tap="onPostTap">重新提交</div>
+</div>

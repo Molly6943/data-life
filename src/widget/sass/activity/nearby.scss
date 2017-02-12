@@ -1,0 +1,100 @@
+@import "../_config";
+.ui-nearby {
+    height: 100%;
+}
+.ui-nearby__search,form {
+    display: block;
+    position: relative;
+    margin: 0.2rem 0.4rem;
+    height: 0.65rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.34rem;
+    .search{
+        position: absolute;
+        left: 0.2rem;
+        top:0.1rem;
+        @include bgi-cover(url(../../image/activity/search.png));
+        width: 0.4rem;
+        height: 0.4rem;
+        &::before{
+            content: '';
+            width: 0.6rem;
+            height: 0.6rem;
+        }
+    }
+    &>input{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        padding-left: 0.3rem;
+        text-align: center;
+        border: none;
+        outline: none;
+    }
+}
+.ui-nearby__row{
+    display: block;
+    position: relative;
+    height: 1rem;
+    line-height: 1rem;
+    padding-left: 0.3rem;
+    background-color: #fff;
+    font-size: 0.34rem;
+    color: #333399;
+    border-bottom: 1px #eee solid;
+    &:active {
+        background-color: #c2c4c2;
+    }
+    .icon-right {
+        width: 0.36rem;
+        height: 0.36rem;
+        position: absolute;
+        right: 0.3rem;
+        top: 50%;
+        margin-top: -0.18rem;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-image: url("../../image/activity/right.png");
+        background-size: 100%;
+    }
+}
+.ui-nearby__list
+.ui-nearby__item{
+    display: block;
+    position: relative;
+    height: 1rem;
+    line-height: 1rem;
+    padding-left: 0.3rem;
+    background-color: #fff;
+    font-size: 0.34rem;
+    border-bottom: 1px #eee solid;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:active {
+        background-color: #c2c4c2;
+    }
+    .icon-right {
+        width: 0.36rem;
+        height: 0.36rem;
+        position: absolute;
+        right: 0.3rem;
+        top: 50%;
+        margin-top: -0.18rem;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-image: url("../../image/activity/right.png");
+        background-size: 100%;
+    }
+    &>span{
+        // display: block;
+        // height: 1rem;
+        // line-height: 1rem;
+        padding-left: 0.3rem;
+        background-color: #fff;
+        font-size: 0.24rem;
+    }
+}

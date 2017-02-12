@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+body {
+  background: #F0F0F0; }
+
+.ui-advice__title {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 0.24rem;
+  color: #9E9E9E;
+  padding: 0 0.2rem; }
+
+.ui-advice__item {
+  background: #fff;
+  padding: 0 0.2rem;
+  overflow: hidden; }
+  .ui-advice__item.is-active {
+    margin-bottom: 0.15rem; }
+
+.ui-advice__item-head {
+  color: #3D3D3D;
+  font-size: 0.28rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  padding-right: 0.4rem;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  text-overflow: ellipsis; }
+  .ui-advice__item-head::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+       -moz-transform: scaleY(0.5);
+        -ms-transform: scaleY(0.5);
+         -o-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+    background-color: #E5E5E5; }
+  .ui-advice__item-head:last-child::after {
+    display: none; }
+
+.ui-advice__item-main {
+  display: none; }
+  .is-active .ui-advice__item-main {
+    border: 0;
+    padding: 0;
+    outline: 0;
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    margin-bottom: 0.1rem; }
+
+.ui-advice__item-arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(-135deg);
+     -moz-transform: translateY(-50%) rotate(-135deg);
+      -ms-transform: translateY(-50%) rotate(-135deg);
+       -o-transform: translateY(-50%) rotate(-135deg);
+          transform: translateY(-50%) rotate(-135deg);
+  right: 0.2rem;
+  width: 0;
+  height: 0;
+  margin-top: 3px; }
+  .is-active .ui-advice__item-arrow {
+    -webkit-transform: translateY(-50%) rotate(45deg);
+       -moz-transform: translateY(-50%) rotate(45deg);
+        -ms-transform: translateY(-50%) rotate(45deg);
+         -o-transform: translateY(-50%) rotate(45deg);
+            transform: translateY(-50%) rotate(45deg);
+    margin-top: -3px; }
+  .ui-advice__item-arrow::before, .ui-advice__item-arrow::after {
+    content: "";
+    position: absolute;
+    background-color: #BDBDBD; }
+  .ui-advice__item-arrow::before {
+    width: 1px;
+    height: 10px; }
+  .ui-advice__item-arrow::after {
+    height: 1px;
+    width: 10px; }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkdmljZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsa0JBQWlCO0FBQ2pCOztJQUVHO0FBQ0g7O0lBRUc7QUFDSCwwQkFBeUI7QUFDekI7OztJQUdHO0FBQ0gsbUJBQWtCO0FBQ2xCLGtCQUFpQjtBQUNqQjs7Ozs7SUFLRztBQUNILFVBQVM7QUFDVCxVQUFTO0FBQ1QsYUFBWTtBQUNaLFlBQVc7QUFDWCxZQUFXO0FBQ1gsV0FBVTtBQUNWLFlBQVc7QUFDWCxXQUFVO0FBQ1YsV0FBVTtBQUNWLFdBQVU7QUFDVixTQUFRO0FBQ1IsV0FBVTtBQUNWLFdBQVU7QUFDVixXQUFVO0FBQ1YsWUFBVztBQUNYO0VBQ0UscUJBQW9CLEVBQUU7O0FBRXhCO0VBQ0UsZ0JBQWU7RUFDZixxQkFBb0I7RUFDcEIsa0JBQWlCO0VBQ2pCLHFCQUFvQjtFQUNwQix1QkFBc0I7RUFDdEIsdUJBQXNCO0VBQ3RCLHlCQUF3QjtFQUN4QixvQkFBbUI7RUFDbkIsZ0JBQWU7RUFDZixtQkFBa0IsRUFBRTs7QUFFdEI7RUFDRSxrQkFBaUI7RUFDakIsbUJBQWtCO0VBQ2xCLGtCQUFpQixFQUFFO0VBQ25CO0lBQ0Usd0JBQXVCLEVBQUU7O0FBRTdCO0VBQ0UsZ0JBQWU7RUFDZixvQkFBbUI7RUFDbkIsZ0JBQWU7RUFDZixxQkFBb0I7RUFDcEIsdUJBQXNCO0VBQ3RCLG9CQUFtQjtFQUNuQixrQkFBaUI7RUFDakIscUJBQW9CO0VBQ3BCLHVCQUFzQjtFQUN0Qix1QkFBc0I7RUFDdEIseUJBQXdCLEVBQUU7RUFDMUI7SUFDRSxhQUFZO0lBQ1osb0JBQW1CO0lBQ25CLFNBQVE7SUFDUixXQUFVO0lBQ1YsYUFBWTtJQUNaLGFBQVk7SUFDWixnQ0FBdUI7T0FBdkIsNkJBQXVCO1FBQXZCLDRCQUF1QjtTQUF2QiwyQkFBdUI7WUFBdkIsd0JBQXVCO0lBQ3ZCLDJCQUEwQixFQUFFO0VBQzlCO0lBQ0UsZUFBYyxFQUFFOztBQUVwQjtFQUNFLGVBQWMsRUFBRTtFQUNoQjtJQUNFLFdBQVU7SUFDVixZQUFXO0lBQ1gsWUFBVztJQUNYLGdCQUFlO0lBQ2YsYUFBWTtJQUNaLGdCQUFlO0lBQ2YsbUJBQWtCO0lBQ2xCLHFCQUFvQjtJQUNwQix1QkFBc0IsRUFBRTs7QUFFNUI7RUFDRSxvQkFBbUI7RUFDbkIsVUFBUztFQUNULHFEQUE0QztLQUE1QyxrREFBNEM7TUFBNUMsaURBQTRDO09BQTVDLGdEQUE0QztVQUE1Qyw2Q0FBNEM7RUFDNUMsZUFBYztFQUNkLFVBQVM7RUFDVCxXQUFVO0VBQ1YsaUJBQWdCLEVBQUU7RUFDbEI7SUFDRSxtREFBMEM7T0FBMUMsZ0RBQTBDO1FBQTFDLCtDQUEwQztTQUExQyw4Q0FBMEM7WUFBMUMsMkNBQTBDO0lBQzFDLGtCQUFpQixFQUFFO0VBQ3JCO0lBQ0UsYUFBWTtJQUNaLG9CQUFtQjtJQUNuQiwyQkFBMEIsRUFBRTtFQUM5QjtJQUNFLFlBQVc7SUFDWCxjQUFhLEVBQUU7RUFDakI7SUFDRSxhQUFZO0lBQ1osYUFBWSxFQUFFIiwiZmlsZSI6ImFjdGl2aXR5L2FkdmljZS5jc3MiLCJzb3VyY2VSb290IjoiLi4vc2Fzcy8ifQ== */

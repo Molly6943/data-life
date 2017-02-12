@@ -1,0 +1,29 @@
+<div class="sex-main">
+    <div class="list-data" v-show="showList">
+        <div class="g-block" v-on:click="changeTab(1)">
+            <span class="btn-changePie g-right">切换图形</span>
+        </div>
+        <div class="sex-list">
+            <dl v-for="dateNum in dateList">
+                <dt><span>{{dateNum.date}}</span></dt>
+                <dd v-for="item in dateNum.list">
+                    <div class="date">{{item.month}}</div>
+                    <div class="rate">
+                        <div class="duration"><span class="num">{{item.duration}}</span></div>
+                        <div class="split">|</div>
+                        <div class="times"><span class="num">1</span>次</div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="chart-pie" v-show="showPie">
+        <div class="g-block">
+            <span class="btn-changeList g-left" v-on:click="changeTab(0)">切换数据列表</span>
+        </div>
+        <div class="g-chart chart">
+            <div id="pie" class="pie"></div>
+            <p class="sum">总计<span class="num">{{totalTime}}</span>次</p>
+        </div>
+    </div>
+</div>

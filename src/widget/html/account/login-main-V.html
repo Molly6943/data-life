@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="logo-group">
+		<div class="icon-logo"></div>
+		<div class="logo-name">
+			<p class="mark">Datalking</p>
+			<p class="submark">Theory of life</p>
+		</div>
+	</div>
+	<div class="operate-group">
+		<div class="input input-account">
+			<input type="text" v-model="account">
+		</div>
+		<div class="input input-password">
+			<input type="password" v-model="password" v-on:input="onPwdInput">
+			<span class="btn-delete" v-touch:tap="onCloseTap" v-show="isCloseShow"></span>
+		</div>
+		<div href="javascript:" class="btn-login" v-touch:tap="onLoginTap">登陆</div>
+		<div href="javascript:" class="btn-forgetpwd" v-touch:tap="onForgetTap">忘记密码</div>
+		<p class="third-party-title">第三方账号登陆</p>
+		<div class="third-party-main">
+			<a href="javascript:" class="btn-weixin">微信</a>
+			<a href="javascript:" class="btn-qq">QQ</a>
+			<a href="javascript:" class="btn-weibo">微博</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="bank-recharge-main">
+	<div class="input-group">
+		<label for="money">金额</label>
+		<input v-model="money" type="" name="" id="money" placeholder="充值金额" v-on:input="onMoneyInput">
+	</div>
+	<dl class="method-list">
+		<dt>选择支付方式</dt>
+		<dd v-touch:tap="onAlipayTap">
+			<div class="g-left">
+				<span class="icon icon-zhifubao"></span>
+			</div>
+			<div class="g-center">
+				<p class="name">支付宝支付</p>
+				<p class="desc">建议安装支付宝客户端使用</p>
+			</div>
+			<div class="g-right">
+				<span v-bind:class="{'checkbox':select==0,'s-selected':select==1}"></span>
+			</div>
+		</dd>
+		<dd v-touch:tap="onWechatTap">
+			<div class="g-left">
+				<span class="icon icon-weixin"></span>
+			</div>
+			<div class="g-center">
+				<p class="name">微信支付</p>
+				<p class="desc">建议安装微信客户端使用</p>
+			</div>
+			<div class="g-right">
+				<span v-bind:class="{'checkbox':select1==0,'s-selected':select1==1}"></span>
+			</div>
+		</dd>
+		<!-- <dd>
+			<div class="g-left">
+				<span class="icon icon-huawei"></span>
+			</div>
+			<div class="g-center">
+				<p class="name">华为支付</p>
+				<p class="desc">建议安装华为客户端使用</p>
+			</div>
+			<div class="g-right">
+				<span class="checkbox"></span>
+			</div>
+		</dd> -->
+	</dl>
+	<div class="g-bottom">
+		<div class="btn-ensure">确认充值</div>
+	</div>
+</div>

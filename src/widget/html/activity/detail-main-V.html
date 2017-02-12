@@ -1,0 +1,51 @@
+<!-- <div class="ui-detail only-audio"> -->
+<!-- <div class="ui-detail only-video"> -->
+<div class="ui-body" v-touch:tap="onCloseFrameTap">
+</div>
+<div class="ui-detail only-image">
+    <div class="ui-detail__box">
+        <div class="ui-detail__join" v-touch:tap="onJoinTap">参与</div>
+        <div class="ui-detail__close" v-touch:tap="onCloseTap"></div>
+        <div class="ui-detail__header">
+            <div class="ui-detail__header-avatar" style="background-image:url({{avatar}})"></div>
+            <div class="ui-detail__header-nickname">{{nickName}}</div>
+            <div class="ui-detail__header-id"><div class="ui-detail__header-time">{{startTime}} - {{endTime}}</div>ID:{{userID}}</div>
+        </div>
+        <div class="ui-detail__item">
+            <div class="ui-detail__label">活动</div>
+            <div class="ui-detail__text">{{content}}</div>
+        </div>
+        <div class="ui-detail__item">
+            <div class="ui-detail__label">想法</div>
+            <div class="ui-detail__text">{{thinks}}</div>
+        </div>
+        <div class="ui-detail__item">
+            <div class="ui-detail__label">定位</div>
+            <div class="ui-detail__text">距离你约{{distance}}&nbsp;&nbsp;{{address}}</div>
+        </div>
+        <div class="ui-detail__rewards">
+            <div class="ui-detail__rewards1" v-show="isGiveMoney">{{XSMoney | trans-price}}</div>
+            <div class="ui-detail__rewards2" v-show="isGiveMoney">{{DSMoney | trans-price}}</div>
+            <div class="ui-detail__rewards3" v-show="isGetMoney">{{QSMoney | trans-price}}</div>
+            <div class="ui-detail__rewards4" v-show="isGetMoney">{{DJMoney | trans-price}}</div>
+        </div>
+        <!-- <div class="ui-detail__item is-audio">
+            <div class="ui-detail__label">语音</div>
+            <div class="ui-detail__audio">60s</div>
+        </div>
+        <div class="ui-detail__item is-video">
+            <div class="ui-detail__label">视频</div>
+            <div class="ui-detail__video" style="background-image:url(http://placehold.it/250x270)"></div>
+        </div> -->
+        <div class="ui-detail__item is-image" v-show="showImage">
+            <div class="ui-detail__label">照片</div>
+            <div class="ui-detail__gallery">
+                <div class="ui-detail__list" style="width:{{ (1.62 + 0.2) * images.length}}rem">
+                    <div class="ui-detail__image" style="background-image:url({{pic|trans-photo}})" v-for="pic in images"></div>
+                    <!-- <div class="ui-detail__image" style="background-image:url(http://placehold.it/162x174)"></div>
+                    <div class="ui-detail__image" style="background-image:url(http://placehold.it/162x174)"></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

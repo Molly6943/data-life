@@ -1,0 +1,22 @@
+<div class="information">
+    <div class="avatar" style="background-image:url({{avatar}});" v-touch:tap="onAvatarTap"></div>
+    <div class="input-group">
+        <input v-model="name" type="text" name="nickname" placeholder="&emsp;&emsp;&emsp;昵称" class="nickname">
+        <!-- <div class="sex s-man" > -->
+        <!-- <input type="radio"> -->
+        <!-- <div class="tips man">男</div> -->
+        <!-- <div class="tips woman">女</div> -->
+        <!-- </div> -->
+        <select class="sex" v-model="selected" v-bind:class="{'s-woman':selected==2,'s-man':selected==1}">
+            <option v-for="option in options" value="{{option.sex}}">
+                {{option.text}}
+            </option>
+        </select>
+    </div>
+    <div class="input-group">
+        <textarea name="" id="" rows="6" placeholder="个人简介" v-model="profile"></textarea>
+    </div>
+    <div class="input-group" v-touch:tap="onDateTap">
+        <input readOnly type="text" placeholder="请选择出生日期" v-model="birthday">
+    </div>
+</div>

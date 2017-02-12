@@ -1,0 +1,28 @@
+<div class="ui-taskList__main">
+    <div class="ui-list__item" v-for="item in list" v-touch:tap="onDetailTap(item.actionID,item.name)">
+        <div class="ui-list__avatar" style="background-image:url({{item.avatar}})">
+        </div>
+        <div class="ui-list__name">
+            {{item.name}}
+        </div>
+        <div class="ui-list__leftIcon">
+        </div>
+        <div class="ui-list__leftText">
+            人数：{{item.people}}人
+        </div>
+        <div class="ui-list__leftIcon1">
+        </div>
+        <div class="ui-list__leftText1">
+            地址：{{item.address}}
+        </div>
+        <div class="ui-list__progress" v-show="!item.end">
+            进行中
+        </div>
+        <div class="ui-list__end" v-show="item.end">
+            已结束
+        </div>
+        <div class="ui-list__time">
+            {{item.startTime}} - {{item.endTime}}
+        </div>
+    </div>
+</div>

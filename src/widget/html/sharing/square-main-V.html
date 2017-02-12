@@ -1,0 +1,13 @@
+<div class="ui-list">
+    <div class="ui-square">
+        <div class="ui-square__item" v-for="item in list" style="background-color: {{item.bgColor}}" v-touch:tap="onClassTap($index)">
+            <div class="ui-square__main" style="background-image:url({{item.bgImage}})">
+                <div class="ui-square__title">{{item.title}}</div>
+                <div class="ui-square__detail">(文字、照片、视音频等)</div>
+                <div class="ui-square__desc">{{item.content}}</div>
+                <div class="ui-square__price">{{item.price}}</div>
+                <div class="ui-square__button">{{item.btnText}}</div>
+            </div>
+        </div>
+    </div>
+</div>

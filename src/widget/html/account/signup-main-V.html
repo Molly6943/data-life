@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="logo-group">
+		<div class="icon-logo"></div>
+		<div class="logo-name">
+			<p class="mark">Datalking</p>
+			<p class="submark">Theory of life</p>
+		</div>
+	</div>
+	<div class="operate-group">
+		<div class="input input-account" v-on:input="onAccountInput">
+			<input type="text" v-model="account">
+		</div>
+		<div class="input input-password">
+			<input type="password" v-model="password" v-on:input="onPwdInput">
+			<span class="btn-delete" v-show="isCloseShow" v-touch:tap="onCloseTap"></span>
+		</div>
+		<a href="javascript:" class="btn-next" v-touch:tap="onInformationTap">下一步</a>
+		<p class="use-tips">点击注册意味您同意数说人生的<a href="" class="btn-tips">《使用协议》</a></p>
+	</div>
+</div>

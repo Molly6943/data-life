@@ -1,0 +1,9 @@
+<div class="ui-classification">
+    <div class="ui-classification__item" v-for="item in list" v-touch:tap="onTurnPageTap">
+        <div class="ui-classification__pic" style="background-image:url({{item.image | trans-photo}})">
+        </div>
+        <div class="ui-classification__text">
+            {{item.text}}
+        </div>
+    </div>
+</div>

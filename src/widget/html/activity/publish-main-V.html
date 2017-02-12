@@ -1,0 +1,82 @@
+<div class="ui-publish">
+    <div class="ui-publish__box">
+        <div class="ui-publish__item">
+            <div class="ui-publish__label">对象</div>
+            <div class="ui-publish__input">
+                <input type="text" placeholder="填写对象" v-model="target">
+            </div>
+        </div>
+        <div class="ui-publish__item">
+            <div class="ui-publish__label">活动</div>
+            <div class="ui-publish__input">
+                <textarea placeholder="填写活动内容" v-model="content"></textarea>
+            </div>
+        </div>
+        <div class="ui-publish__item">
+            <div class="ui-publish__label">时间</div>
+            <div class="ui-publish__input">
+                <span class="ui-publish__input-time" v-touch:tap="chooseTime($event,'startTime')" data-action="startTime">{{start}}</span>
+                <span class="ui-publish__input-text">至</span>
+                <span class="ui-publish__input-time" v-touch:tap="chooseTime($event,'endTime')" data-action="endTime">{{end}}</span>
+            </div>
+        </div>
+        <div class="ui-publish__item" v-touch:tap="openNearby">
+            <div class="ui-publish__label">地点<p v-show="showText">
+                （选择地点）
+            </p></div>
+            <div class="ui-publish__text">{{addr}}</div>
+        </div>
+        <div class="ui-publish__rewards">
+
+                <div class="ui-publish__rewards1" v-show="giveMoney">
+                    <div class="ui-publish__rewards-input">
+                        <input type="tel"  v-model="XSMoney"></input>
+                    </div>
+                </div>
+                <div class="ui-publish__rewards2" v-show="giveMoney">
+                    <div class="ui-publish__rewards-input">
+                        <input type="tel"  v-model="DSMoney"></input>
+                    </div>
+                </div>
+
+            <!-- <div class="ui-publish__getMoney" v-show="getMoney"> -->
+                <div class="ui-publish__rewards3" v-show="getMoney">
+                    <div class="ui-publish__rewards-input">
+                        <input type="tel"  v-model="QSMoney"></input>
+                    </div>
+                </div>
+                <div class="ui-publish__rewards4" v-show="getMoney">
+                    <div class="ui-publish__rewards-input">
+                        <input type="tel" v-model="DJMoney"></input>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="ui-bg">
+    </div>
+    <div class="ui-publish__middle">
+        <div class="ui-publish__content">
+            <textarea placeholder="写下或录下你此时此刻的想法..." v-model="thinks"></textarea>
+        </div>
+        <div class="ui-choosePic">
+            <div class="ui-publish__choosePic" style="background-image:url({{pic|trans-photo}});" v-for="pic in list"></div>
+            <div class="ui-publish__more" v-touch:tap="choosePic" v-show="showMore">
+            </div>
+        </div>
+        <div class="ui-choose" v-show="showPic">
+            <div class="ui-publish__content-image" v-touch:tap="choosePic">图片</div>
+            <!-- <div class="ui-publish__content-video">视频</div>
+            <div class="ui-publish__content-audio">音频</div> -->
+        </div>
+        <div class="ui-privacy" v-touch:tap="onPrivacyTap" v-show="showPrivacy">
+            <div class="ui-publish__content-privacy">朋友圈</div>
+            <div v-bind:class="{'true':isPrivacy==1,'false':isPrivacy==2}">
+            </div>
+        </div>
+    </div>
+    <div class="ui-publish__bottom">
+        <div v-bind:class="{'ui-publish__button2':isXSMoney==1,'ui-publish__button':isXSMoney==0}" v-touch:tap="onXSMoneyTap">悬赏</div>
+        <div v-bind:class="{'ui-publish__button2':isQSMoney==1,'ui-publish__button':isQSMoney==0}" v-touch:tap="onQSMoneyTap">求赏</div>
+    </div>
+</div>

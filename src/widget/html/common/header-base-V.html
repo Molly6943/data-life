@@ -1,0 +1,5 @@
+<div id="header" class="ui-header is-base" v-bind:class="{'isHome':isHome}">
+    <div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn"><i class="is-arrow"></i>返回</div>
+    <div v-touch:tap="onTitleTap" class="ui-header__title">{{title}}</div>
+    <div class="ui-header__rightBtn" v-if="!!rightText" v-touch:tap="onTapRightBtn">{{rightText}}</div>
+</div>

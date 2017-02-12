@@ -1,0 +1,20 @@
+<div class="bank-cash-main">
+	<div class="method">
+		<div class="g-left">
+			<span class="icon icon-zhifubao"></span>
+		</div>
+		<div class="g-right">
+			<p class="name">支付宝支付</p>
+			<p class="desc">账号尾数是8957</p>
+		</div>
+	</div>
+	<div class="money-limit">
+		可提取金额：<span class="money">1000</span>元
+	</div>
+	<div class="input-group">
+		<input v-model="money" v-on:input="onMoneyInput" type="" name="" id="money" placeholder="请输入提取金额">
+	</div>
+	<div class="g-bottom">
+		<div class="btn-ensure">确认提现</div>
+	</div>
+</div>

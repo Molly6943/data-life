@@ -1,0 +1,15 @@
+<div class="ui-list" v-show="showSearchResponse">
+    <div class="ui-list__item" v-for="item in list" v-touch:tap="onOthersPageTap">
+        <div class="ui-list__avatar" style="background-image:url({{item.avatar|trans-photo}})"></div>
+        <span>{{item.name}}</span>
+    </div>
+</div>
+<div class="ui-find" v-show="showSearchFocus">
+    <div class="ui-find__friend" v-touch:tap="onIDtap(4)">网络查找ID号</div>
+    <div class="ui-find__activity" v-touch:tap="onActionTap(5)">网络查找活动</div>
+</div>
+<div class="ui-button" v-show="showSearchDefaule" v-touch:tap="onSearchTypeTap">
+    <div class="ui-button__activity" v-touch:tap="onActivityTap(1)">活动</div>
+    <div class="ui-button__information" v-touch:tap="onInfoTap(2)">资讯</div>
+    <div class="ui-button__friend" v-touch:tap="onFriendTap(3)">好友</div>
+</div>

@@ -1,0 +1,204 @@
+@import "../_config";
+// triangle
+%triangle-basic{
+  content:"";
+  height: 0;
+  width: 0;
+}
+@mixin triangle($direction, $borderColor, $size...) {
+  @extend %triangle-basic;
+  @if $direction == top {
+    border-width: $size;
+    border-style: dashed dashed solid;
+    border-color: transparent transparent $borderColor;
+  }
+  @else if $direction == right {
+    border-width: $size;
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent $borderColor;
+  }
+  @else if $direction == bottom {
+    border-width: $size;
+    border-style: solid dashed dashed;
+    border-color: $borderColor transparent transparent;
+  }
+  @else if $direction == left {
+      border-width: $size;
+    border-style: dashed solid dashed dashed;
+    border-color: transparent $borderColor transparent transparent;
+  }
+  @else if $direction == topLeft {
+    border-width: $size;
+    border-style: solid dashed dashed solid;
+    border-color: $borderColor transparent transparent $borderColor;
+  }
+  @else if $direction == topRight {
+    border-width: $size;
+    border-style: solid solid dashed dashed;
+    border-color: $borderColor $borderColor transparent transparent;
+  }
+   @else if $direction == bottomLeft {
+    border-width: $size;
+    border-style: dashed dashed solid solid;
+    border-color: transparent transparent $borderColor $borderColor;
+  }
+  @else if $direction == bottomRight {
+    border-width: $size;
+    border-style: dashed solid solid dashed;
+    border-color: transparent $borderColor $borderColor transparent;
+  }
+}
+
+.sex-main{
+	height: 100%;
+	.g-block{
+		overflow: hidden;
+		span{
+			display: block;
+			margin: 0 .20rem;
+			padding-left: .60rem;
+			height: .40rem;
+			line-height: .40rem;
+			font-size: .20rem;
+			color:#9E9E9E;
+			background-position: left center;
+			background-repeat: no-repeat;
+		}
+		.btn-changeList{
+			background-image: url(../../image/privacy/bank/icon-list.png);
+			background-size: .39rem;
+		}
+		.btn-changePie{
+			background-image: url(../../image/privacy/bank/icon-pie.png);
+			background-size: .37rem;
+		}
+		.g-left{
+			float: left;
+		}
+		.g-right{
+			float: right;
+		}
+	}
+	.list-data{
+		height: 100%;
+		position: relative;
+		.g-block{
+			position: absolute;
+			right:0;
+			top:.40rem;
+		}
+	}
+	.sex-list{
+		min-height: 100%;
+		border-left: .12rem solid #B7B7B7;
+		margin-left: .55rem;
+		padding-top: .60rem;
+		dt,dd{
+			position: relative;
+			&::before{
+				content:"";
+				background-color: #98C13E;
+				border: 1px solid #fff;
+				border-radius: 100%;
+				position: absolute;
+				top:50%;
+				transform:translateY(-50%);
+			}
+		}
+		dt{
+			margin-left: .54rem;
+			margin-bottom: .30rem;
+			line-height: .28rem;
+			&::before{
+				width:.47rem;
+				height: .47rem;
+				margin-left: ( - .45rem / 2 - .54rem - .06rem );
+			}
+			span{
+				font-size: .28rem;
+				color:#979797;
+				padding-right: .20rem;
+				padding-bottom: .10rem;
+				border-bottom: 1px solid #979797;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		dd{
+			margin-left: .42rem;
+			margin-bottom: .10rem;
+			&::before{
+				width:.21rem;
+				height: .21rem;
+				margin-left: ( - .19rem / 2 - .42rem - .06rem );
+				margin-top: .14rem;
+			}
+		}
+		.date{
+			font-size: .28rem;
+			color:#979797;
+			margin-bottom: -.10rem;
+		}
+		.rate{
+			background-color: #fff;
+			padding: .20rem .50rem .20rem .20rem;
+			border-radius: 4px;
+			display: inline-block;
+			position: relative;
+			&::before{
+				@include triangle(left,#fff,.15rem);
+				position: absolute;
+				left:-.28rem;
+				top:50%;
+				transform:translateY(-50%);
+			}
+			div{
+				float: left;
+			}
+		}
+		.duration{
+			font-size: .26rem;
+			color:#B7B7B7;
+			.num{
+				font-size: .28rem;
+				color:#CE2C2C;
+				margin-right: .05rem;
+			}
+		}
+		.split{
+			font-size: .30rem;
+			color:#979797;
+			margin:0 .20rem;
+		}
+		.times{
+			font-size: .26rem;
+			color:#B7B7B7;
+			.num{
+				font-size: .28rem;
+				color:#81C575;
+				margin-right: .05rem;
+			}
+		}
+	}
+	.chart-pie{
+        width: 100%;
+		min-height: 100%;
+		background-color: #fff;
+		padding:.30rem .30rem;
+		.pie{
+			width:5.10rem;
+			height: 4rem;
+			margin:.30rem auto;
+		}
+		.sum{
+			font-size: .30rem;
+			color:#9E9E9E;
+			text-align: right;
+			.num{
+				font-size: .60rem;
+				color:#DF1C1C;
+				margin:0 .20rem;
+			}
+		}
+	}
+}

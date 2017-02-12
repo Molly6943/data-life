@@ -1,0 +1,250 @@
+@import "../_config";
+
+.ui-list {
+    height: 100%;
+}
+.ui-list__item {
+    background: #ffffff;
+    margin-bottom: 0.2rem;
+    padding: 0.1rem 0.2rem 0.2rem;
+}
+.ui-list__head {
+    overflow: hidden;
+    position: relative;
+    padding-left: 1.24rem;
+    height: 1.08rem;
+}
+.ui-list__head-avatar {
+    position: absolute;
+    width: 1.08rem;
+    height: 1.08rem;
+    border-radius: 8%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+}
+.ui-list__head-nickname {
+    color: #3D3D3D;
+    font-size: 0.3rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    margin-top: 0.04rem;
+}
+.ui-list__head-id{
+    position: absolute;
+    font-size: 0.24rem;
+    color: #6A6A6A;
+    right: 0.2rem;
+    top: 0.1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+}
+.ui-list__head-hobby {
+    color: #6A6A6A;
+    font-size: 0.2rem;
+    height: 0.28rem;
+    line-height: 0.28rem;
+    padding-top: 0.05rem;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+}
+.ui-list__status{
+    height: 0.3rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.1rem;
+    float: left;
+    // width: 0.96rem;
+    padding: 0 0.04rem;
+    margin-right: 0.04rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    background: #EA612F;
+    text-align: center;
+    font-size: 0.2rem;
+    color: #fff;
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.ui-list__statusReady{
+    height: 0.3rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.1rem;
+    float: left;
+    // width: 0.96rem;
+    padding: 0 0.04rem;
+    margin-right: 0.04rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    background: grey;
+    text-align: center;
+    font-size: 0.2rem;
+    color: #fff;
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.ui-list__stars {
+    display: block;
+    margin-top: 0.23rem;
+}
+.ui-list__star {
+    width: 0.24rem;
+    height: 0.24rem;
+    // @include bgi-full(url(../../image/message/index-star.png));
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.ui-list__body {
+    overflow: hidden;
+    position: relative;
+}
+.ui-list__body-content {
+    line-height: 0.3rem;
+    margin-top: 0.08rem;
+    color: #9E9E9E;
+    font-size: 0.24rem;
+    padding: 0 0.08rem;
+    margin: 0.1rem 0;
+}
+.ui-list__body-gallery {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+.ui-list__body-images {
+    margin-left: -0.2rem;
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.ui-list__body-image {
+    float: left;
+    width: 1.625rem;
+    height: 1.75rem;
+    margin-left: 0.2rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ui-list__foot {
+    overflow: hidden;
+    position: relative;
+}
+.ui-list__foot-time {
+    // float: right;
+    height: 0.56rem;
+    font-size: 0.18rem;
+    line-height: 0.56rem;
+    color: #737373;
+    padding-right: 0.08rem;
+    text-align: right;
+}
+.ui-list__foot-detail {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+.ui-list__foot-collect,
+.ui-list__foot-comment,
+.ui-list__foot-like,
+.ui-list__foot-unlike {
+    float: right;
+    font-size: 0.18rem;
+    line-height: 0.56rem;
+    color: #999;
+    position: relative;
+    margin-left: 0.15rem;
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 0.21rem;
+    }
+}
+.ui-list__foot-collect{
+    padding-right: 0.3rem;
+    &::after {
+        width: 0.24rem;
+        @include bgi-full(url(../../image/message/message-collect.png));
+        margin-top: 0.02rem;
+    }
+}
+.ui-list__foot-comment {
+    padding-right: 0.3rem;
+    &::after {
+        width: 0.24rem;
+        @include bgi-full(url(../../image/message/index-comment.png));
+        margin-top: 0.02rem;
+    }
+}
+.ui-list__foot-like {
+    padding-right: 0.3rem;
+    &::after {
+        width: 0.2rem;
+        @include bgi-full(url(../../image/message/index-like.png));
+    }
+}
+.ui-list__foot-unlike {
+    padding-right: 0.3rem;
+    &::after {
+        width: 0.2rem;
+        @include bgi-full(url(../../image/message/index-unlike.png));
+    }
+}
+.ui-list__foot-share {
+    float: left;
+    font-size: 0.3rem;
+    line-height: 0.56rem;
+    color: #999;
+    position: relative;
+    margin-left: 0.15rem;
+    padding-right: 0.3rem;
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        @include bgi-full(url(../../image/message/index-share.png));
+        height: 0.24rem;
+        width: 0.25rem;
+    }
+}
+
+.icon-star {
+    width: 0.2rem;
+    height: 0.2rem;
+    @include bgi-full(url(../../image/message/index-star.png));
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,12 @@
+<div class="information-sex-main">
+    <div class="sex-line" v-touch:tap="sexTap('1')">
+        男
+        <div class="icon-right" v-show="isMan">
+        </div>
+    </div>
+    <div class="sex-line" v-touch:tap="sexTap('2')">
+        女
+        <div class="icon-right" v-show="!isMan">
+        </div>
+    </div>
+</div>

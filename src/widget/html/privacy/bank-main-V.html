@@ -1,0 +1,506 @@
+<div class="bank-main">
+	<!-- <div class="tab-list">
+		<span class="tab-item" v-bind:class="{'s-current':showBankTab0}" v-on:click="changeBankTab(0)">人民币账户</span>
+		<span class="tab-item" v-bind:class="{'s-current':showBankTab1}" v-on:click="changeBankTab(1)">积分账户</span>
+	</div> -->
+	<div class="section-rmb" v-show="showBankTab0">
+		<div class="chart-bar" v-show="showRmbBar">
+			<div class="g-block">
+				<span class="btn-changePie g-left" v-on:click="changeRmbTab(1)">切换图形</span>
+			</div>
+			<div class="g-chart">
+				<div class="g-left">
+					<div id="rmb-bar-1" class="bar"></div>
+				</div>
+				<div class="g-right">
+					<ul class="type-list">
+						<li>
+							<span class="type">当前余额</span>
+							<span class="amount">{{current | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">悬赏余额</span>
+							<span class="amount">{{setReward | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">打赏余额</span>
+							<span class="amount">{{giveReward | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">求赏余额</span>
+							<span class="amount">{{seekReward | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">定金余额</span>
+							<span class="amount">{{Deposit | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">待收余额</span>
+							<span class="amount">{{alreadyMoney | trans-price}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="g-chart">
+				<div class="g-left">
+					<div id="rmb-bar-2" class="bar"></div>
+				</div>
+				<div class="g-right">
+					<ul class="type-list">
+						<!-- <li>
+							<span class="type">注册金额</span>
+							<span class="amount">1000.25</span>
+						</li>
+						<li>
+							<span class="type">注册红包</span>
+							<span class="amount">-300.05</span>
+						</li> -->
+						<li>
+							<span class="type">团购返利</span>
+							<span class="amount">{{group | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">推广返利</span>
+							<span class="amount">{{promotion | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">累计返利</span>
+							<span class="amount">{{accumulate | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">数据返利</span>
+							<span class="amount">{{digital | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">广告返利</span>
+							<span class="amount">{{advertisement | trans-price}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="chart-pie" v-show="showRmbPie">
+			<div class="g-block">
+				<span class="btn-changeList g-left" v-on:click="changeRmbTab(2)">切换数据列表</span>
+			</div>
+			<div class="g-chart">
+				<div class="g-left">
+					<div id="rmb-pie-1" class="pie"></div>
+				</div>
+				<div class="g-right">
+					<ul class="type-list">
+                        <li>
+							<span class="type">当前余额</span>
+							<span class="amount">{{current | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">悬赏余额</span>
+							<span class="amount">{{setReward | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">打赏余额</span>
+							<span class="amount">{{giveReward | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">求赏余额</span>
+							<span class="amount">{{seekReward | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">定金余额</span>
+							<span class="amount">{{Deposit | trans-price}}</span>
+						</li>
+						<li>
+							<span class="type">待收余额</span>
+							<span class="amount">{{alreadyMoney | trans-price}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="g-chart">
+				<div class="g-left">
+					<div id="rmb-pie-2" class="pie"></div>
+				</div>
+				<div class="g-right">
+					<ul class="type-list">
+						<!-- <li>
+							<span class="type">注册金额</span>
+							<span class="amount">1000.25</span>
+						</li>
+						<li>
+							<span class="type">注册红包</span>
+							<span class="amount">-300.05</span>
+						</li> -->
+                        <li>
+                            <span class="type">团购返利</span>
+                            <span class="amount">{{group | trans-price}}</span>
+                        </li>
+                        <li>
+                            <span class="type">推广返利</span>
+                            <span class="amount">{{promotion | trans-price}}</span>
+                        </li>
+                        <li>
+                            <span class="type">累计返利</span>
+                            <span class="amount">{{accumulate | trans-price}}</span>
+                        </li>
+                        <li>
+                            <span class="type">数据返利</span>
+                            <span class="amount">{{digital | trans-price}}</span>
+                        </li>
+                        <li>
+                            <span class="type">广告返利</span>
+                            <span class="amount">{{advertisement | trans-price}}</span>
+                        </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="list-data" v-show="showRmbList">
+			<ul>
+			    <li>
+					<span class="type">当前余额</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{current | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">悬赏余额</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{setReward | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">打赏余额</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{giveReward | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">求赏余额</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{seekReward | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">定金余额</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{Deposit | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">待收余额</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{alreadyMoney | trans-price}}</span>
+				</li>
+			</ul>
+			<ul>
+				<!-- <li>
+					<span class="type">注册金额</span>
+					<span class="date">2016/05/15</span>
+					<span class="amount">1000.25</span>
+				</li>
+				<li>
+					<span class="type">注册红包</span>
+					<span class="date">2016/05/15</span>
+					<span class="amount">-300.05</span>
+				</li> -->
+				<li>
+					<span class="type">团购返利</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{group | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">推广返利</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{promotion | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">累计返利</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{accumulate | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">数据返利</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{digital | trans-price}}</span>
+				</li>
+				<li>
+					<span class="type">广告返利</span>
+					<span class="date">{{date}}</span>
+					<span class="amount">{{advertisement | trans-price}}</span>
+				</li>
+			</ul>
+			<div class="g-block">
+				<span class="btn-changeBar g-right" v-on:click="changeRmbTab(0)">切换图形</span>
+			</div>
+		</div>
+		<ul class="btn-list">
+			<li v-touch:tap="onPayPageTap">
+				<div class="icon icon-recharge"></div>
+				<div class="mark">充值</div>
+				<div class="icon-arrow"></div>
+			</li>
+			<li v-touch:tap="onBankCashTap">
+				<div class="icon icon-cash"></div>
+				<div class="mark">提现</div>
+				<div class="icon-arrow"></div>
+			</li>
+			<li v-touch:tap="onBankTotalTap">
+				<div class="icon icon-data"></div>
+				<div class="mark">账单明细</div>
+				<div class="icon-arrow"></div>
+			</li>
+		</ul>
+	</div>
+	<!-- <div class="section-rsb" v-show="showBankTab1">
+		<div class="chart-bar" v-show="showRsbBar">
+			<div class="g-block">
+				<span class="btn-changePie g-left" v-on:click="changeRsbTab(1)">切换图形</span>
+			</div>
+			<div id="rsb-bar" class="bar"></div>
+			<div class="count-box">
+				<p class="count-title">今日累计数值</p>
+				<p class="count-content">合计<span class="count-num">3000.05</span><span class="count-unit">RH</span></p>
+			</div>
+			<dl class="type-list">
+				<dt>
+					<span class="mark">类别/单价</span>
+				</dt>
+				<dd>
+					<p class="name">餐饮</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">着装</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">交通</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">工作</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">社交</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">购物</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">亲子</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">运动</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">娱乐</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">旅游</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">学习</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">家政</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">啪啪</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">睡觉</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">其它</p>
+					<p class="count">0.006 R</p>
+				</dd>
+			</dl>
+		</div>
+		<div class="chart-pie" v-show="showRsbPie">
+			<div class="g-block">
+				<span class="btn-changeList g-left" v-on:click="changeRsbTab(2)">切换数据列表</span>
+			</div>
+			<div id="rsb-pie" class="pie"></div>
+			<div class="count-box">
+				<p class="count-title">今日累计数值</p>
+				<p class="count-content">合计<span class="count-num">3000.05</span><span class="count-unit">RH</span></p>
+			</div>
+			<dl class="type-list">
+				<dt>
+					<span class="mark">类别/单价</span>
+				</dt>
+				<dd>
+					<p class="name">餐饮</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">着装</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">交通</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">工作</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">社交</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">购物</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">亲子</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">运动</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">娱乐</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">旅游</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">学习</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">家政</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">啪啪</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">睡觉</p>
+					<p class="count">0.006 R</p>
+				</dd>
+				<dd>
+					<p class="name">其它</p>
+					<p class="count">0.006 R</p>
+				</dd>
+			</dl>
+		</div>
+		<div class="list-data" v-show="showRsbList">
+			<dl class="type-table">
+				<dt>
+					<span class="type">类别</span>
+					<span class="time">时间</span>
+					<span class="unitprice">单价</span>
+					<span class="count">今日累计数值</span>
+				</dt>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">着装</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+				<dd>
+					<span class="type">餐饮</span>
+					<span class="time">1小时</span>
+					<span class="unitprice">0.006 R</span>
+					<span class="count">1000.25</span>
+				</dd>
+			</dl>
+			<div class="g-block">
+				<span class="btn-changeBar g-left" v-on:click="changeRsbTab(0)">切换图形</span>
+				<p class="total">合计<i class="num">3000.05</i></p>
+			</div>
+		</div>
+		<div class="btn-record" v-touch:tap="onRecordTap">随手一记/修正</div>
+	</div> -->
+</div>

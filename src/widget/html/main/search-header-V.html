@@ -1,0 +1,11 @@
+<div id="header" class="ui-header is-base">
+    <div class="ui-header__searchLeftBtn"><i class="is-arrow"></i></div>
+    <!-- <div v-touch:tap="onTitleTap" class="ui-header__title">{{title}}</div> -->
+    <div class="ui-header__search">
+        <form onsubmit="return false">
+            <input type="search" placeholder="搜索ID、附近活动或人" value="" @keyup.enter="onEnter" v-model="searchText" v-on:input="onSearchInput" />
+        </form>
+        <!-- <div>搜索ID、附近活动或人</div> -->
+    </div>
+    <div class="ui-header__rightBtn" v-if="!!rightText" v-touch:tap="onTapRightBtn">{{rightText}}</div>
+</div>

@@ -1,0 +1,22 @@
+<div class="ui-top">
+    请告诉我们你想投诉该活动的理由
+</div>
+<div class="ui-complain">
+    <div class="ui-complain__line" v-for="item in list" v-show="showText">
+        <p v-touch:tap="onComplainTap($index)">
+            {{item.text}}
+        </p>
+        <i class="rightIcon" v-show="item.showdownArrow" style="background-image:url(../../image/privacy/task/downArrow.png)"></i>
+        <i class="rightIcon" v-show="item.showupArrow" style="background-image:url(../../image/privacy/task/upArrow.png)"></i>
+        <textarea class="content" v-model="item.content" v-show="item.showTextarea"></textarea>
+    </div>
+</div>
+<div class="ui-complain_btn1" v-touch:tap="onResponseTap" v-show="showResponse">
+    提交
+</div>
+<div class="ui-complain_btn1" v-touch:tap="onCancelTap" v-show="!showResponse">
+    取消投诉
+</div>
+<div class="ui-complain_btn2" v-touch:tap="onSubmitTap" v-show="!showResponse">
+    提交投诉
+</div>

@@ -1,0 +1,90 @@
+<div class="header">
+	<div class="header-pic" style="background-image:url({{avatar}})">
+		<span class="sex" v-bind:class="{'icon-man': sex=='1','icon-woman':sex=='2'}"></span>
+	</div>
+    <div class="header-signIn" v-show="!signIn" v-touch:tap="onSigninTap">
+        <p>
+        签到
+        </p>
+    </div>
+    <div class="header-signInAfter" v-show="signIn" v-touch:tap="onSigninTap">
+        <p>
+            已签到
+        </p>
+    </div>
+	<div class="header-messages">
+		<p class="nickname">{{nickName}}</p>
+		<p class="account">账号:{{account}}</p>
+		<div class="operate">
+			<span class="btn-modify" v-touch:tap="onMyTap">资料完善度{{progress}}</span>
+		</div>
+	</div>
+</div>
+<ul class="tab-list">
+	<li class="s-news" v-touch:tap="onMyBankTap">
+		<div class="icon icon-bank"></div>
+		<div class="mark">我的银行</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+    <li class="s-news" v-touch:tap="onMyPointsTap">
+		<div class="icon icon-points"></div>
+		<div class="mark">我的积分</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+	<li v-touch:tap="onTaskTap">
+		<div class="icon icon-task"></div>
+		<div class="mark">我的任务</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+	<li v-touch:tap="onMineTap">
+		<div class="icon icon-home"></div>
+		<div class="mark">我的主页</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+	<!-- <li v-touch:tap="onBusinessTap">
+		<div class="icon icon-popularize"></div>
+		<div class="mark">业务推广</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li> -->
+	<li v-touch:tap="onVerifyTap">
+		<div class="icon icon-verify"></div>
+		<div class="mark">实名验证</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+	<li v-touch:tap="onTrajectoryTap">
+		<div class="icon icon-trace"></div>
+		<div class="mark">我的轨迹</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+	<li v-touch:tap="onHistoryTap">
+		<div class="icon icon-history"></div>
+		<div class="mark">我的收藏</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+	<li v-touch:tap="onSexTap">
+		<div class="icon icon-sex"></div>
+		<div class="mark">我的啪啪</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+	<li v-touch:tap="onVerdictTap">
+		<div class="icon icon-verdict"></div>
+		<div class="mark">活动裁决</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+	<li v-touch:tap="onSettingTap">
+		<div class="icon icon-setting"></div>
+		<div class="mark">设置</div>
+		<div class="icon-point"></div>
+		<div class="icon-arrow"></div>
+	</li>
+</ul>

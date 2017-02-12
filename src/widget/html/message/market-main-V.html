@@ -1,0 +1,8 @@
+<div class="ui-index is-list" v-bind:class="{'blurShadow':blurShadow==true;}">
+    <div class="ui-index__list">
+        <cell v-for="item in list" :item.sync="item" v-bind:class="{'is-left': $index % 2 == 0, 'is-right': $index % 2 == 1}" v-touch:tap="onMessageDetailTap($event,$index)"></cell>
+    </div>
+    <!-- <div class="ui-index__list is-right">
+        <cell v-for="item in list" v-if="$index % 2 == 1" :item.sync="item" v-touch:tap="onMessageDetailTap(item)"></cell>
+    </div> -->
+</div>
